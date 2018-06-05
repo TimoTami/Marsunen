@@ -46,6 +46,7 @@ public class VihuLiikkuminen : MonoBehaviour {
         EsteLisäOikea = 0;
         EsteLisäVasen = 0;
         SaaRikkoa = false;
+        vihuliikkunut = true;
 }
 	
 	
@@ -60,28 +61,36 @@ public class VihuLiikkuminen : MonoBehaviour {
        
         if (RuutuLiikkuminen3.Instance.liikkunut==true&&transform.position==uusipaikka)
         {
-            
             matkaX = Vector3.Distance(target, transform.position);
             
             
 
-            if (target.y + EsteLisäYlös > transform.position.y && Mathf.Abs(target.x - transform.position.x) <= Mathf.Abs(target.y - transform.position.y))
+            if (target.y > transform.position.y + EsteLisäYlös && Mathf.Abs(target.x - transform.position.x) <= Mathf.Abs(target.y - transform.position.y))
             {
                 //yDir = 1f;
                 
-                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka)) && SaaRikkoa == false)
+                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka+new Vector3(0,1,0))) && SaaRikkoa == false)
                 {
-                    EsteLisäYlös = 1;
+                    EsteLisäYlös = 2;
 
-                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(uusipaikka)))
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka+new Vector3(0,1,0))))
                     {
                         EsteLisäYlös += 1;
                     }
-                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka+new Vector3(0, 1, 0))))
+                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka+new Vector3(0, 2, 0))))
                     {
                         EsteLisäYlös += 1;
+
+                        if(TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka+new Vector3(0, 3, 0))))
+                        {
+                            EsteLisäYlös += 1;
+                        }
+                        if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, 3, 0))))
+                        {
+                            EsteLisäYlös += 1;
+                        }
                     }
-                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(uusipaikka+new Vector3(0, 1, 0))))
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka+new Vector3(0, 2, 0))))
                     {
                         EsteLisäYlös += 1;
                     }
@@ -104,6 +113,8 @@ public class VihuLiikkuminen : MonoBehaviour {
                     EsteLisäAlas = 0;
                     EsteLisäOikea = 0;
                     EsteLisäVasen = 0;
+                    SaaRikkoa = false;
+                    return;
                 }
 
             }
@@ -111,18 +122,27 @@ public class VihuLiikkuminen : MonoBehaviour {
             {
                 //yDir = -1f;
                 
-                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka)) && SaaRikkoa == false)
+                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -1, 0))) && SaaRikkoa == false)
                 {
-                    EsteLisäAlas = 1;
-                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(uusipaikka)))
+                    EsteLisäAlas = 2;
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, -1, 0))))
                     {
                         EsteLisäAlas += 1;
                     }
-                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka + new Vector3(0, -1, 0))))
+                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -2, 0))))
                     {
                         EsteLisäAlas += 1;
+
+                        if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -3, 0))))
+                        {
+                            EsteLisäAlas += 1;
+                        }
+                        if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, -3, 0))))
+                        {
+                            EsteLisäAlas += 1;
+                        }
                     }
-                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(uusipaikka + new Vector3(0, -1, 0))))
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, -2, 0))))
                     {
                         EsteLisäAlas += 1;
                     }
@@ -145,25 +165,36 @@ public class VihuLiikkuminen : MonoBehaviour {
                     EsteLisäAlas = 0;
                     EsteLisäOikea = 0;
                     EsteLisäVasen = 0;
+                    SaaRikkoa = false;
+                    return;
                 }
             }
             
-            else if (target.x + EsteLisäOikea > transform.position.x && Mathf.Abs(target.x - transform.position.x) >= Mathf.Abs(target.y - transform.position.y))
+            else if (target.x > transform.position.x + EsteLisäOikea && Mathf.Abs(target.x - transform.position.x) >= Mathf.Abs(target.y - transform.position.y))
             {
                 //xDir = 1f;
                 
-                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka)) && SaaRikkoa == false)
+                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(1, 0, 0))) && SaaRikkoa == false)
                 {
-                    EsteLisäOikea = 1;
-                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(uusipaikka)))
+                    EsteLisäOikea = 2;
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(1, 0, 0))))
                     {
                         EsteLisäOikea += 1;
                     }
-                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka + new Vector3(1, 0, 0))))
+                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(2, 0, 0))))
                     {
                         EsteLisäOikea += 1;
+
+                        if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(3, 0, 0))))
+                        {
+                            EsteLisäOikea += 1;
+                        }
+                        if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(3, 0, 0))))
+                        {
+                            EsteLisäOikea += 1;
+                        }
                     }
-                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(uusipaikka + new Vector3(1, 0, 0))))
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(2, 0, 0))))
                     {
                         EsteLisäOikea += 1;
                     }
@@ -186,24 +217,35 @@ public class VihuLiikkuminen : MonoBehaviour {
                     EsteLisäAlas = 0;
                     EsteLisäOikea = 0;
                     EsteLisäVasen = 0;
+                    SaaRikkoa = false;
+                    return;
                 }
             }
             else if (target.x + EsteLisäVasen < transform.position.x && Mathf.Abs(target.x - transform.position.x) >= Mathf.Abs(target.y - transform.position.y))
             {
                 //xDir = -1f;
                 
-                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka)) && SaaRikkoa == false)
+                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(-1, 0, 0))) && SaaRikkoa == false)
                 {
-                    EsteLisäVasen = 1;
-                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(uusipaikka)))
+                    EsteLisäVasen = 2;
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(-1, 0, 0))))
                     {
                         EsteLisäVasen += 1;
                     }
-                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka + new Vector3(-1, 0, 0))))
+                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka + new Vector3(-2, 0, 0))))
                     {
                         EsteLisäVasen += 1;
+
+                        if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(-3, 0, 0))))
+                        {
+                            EsteLisäVasen += 1;
+                        }
+                        if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(-3, 0, 0))))
+                        {
+                            EsteLisäVasen += 1;
+                        }
                     }
-                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(uusipaikka + new Vector3(-1, 0, 0))))
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(uusipaikka + new Vector3(-2, 0, 0))))
                     {
                         EsteLisäVasen += 1;
                     }
@@ -226,29 +268,41 @@ public class VihuLiikkuminen : MonoBehaviour {
                     EsteLisäAlas = 0;
                     EsteLisäOikea = 0;
                     EsteLisäVasen = 0;
+                    SaaRikkoa = false;
+                    return;
                 }
             }
 
 
 
-            //------------------------------------------------------------------SAMA MATKA---------------------------------------------------------------------
+            //------------------------------------------------------------------ONGELMA 1-------------------------------------------------------------------- -
 
-            else if (target.y + EsteLisäYlös == transform.position.y && Mathf.Abs(target.x - transform.position.x) <= Mathf.Abs(target.y - transform.position.y))
+            if (target.y > transform.position.y + EsteLisäYlös && Mathf.Abs(target.x - transform.position.x) > Mathf.Abs(target.y - transform.position.y))
             {
-                //xDir = -1f;
-                
-                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka)) && SaaRikkoa == false)
+                //yDir = 1f;
+
+                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, 1, 0))) && SaaRikkoa == false)
                 {
-                    EsteLisäYlös = 1;
-                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(uusipaikka)))
+                    EsteLisäYlös = 2;
+
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, 1, 0))))
                     {
                         EsteLisäYlös += 1;
                     }
-                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka + new Vector3(0, 1, 0))))
+                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, 2, 0))))
                     {
                         EsteLisäYlös += 1;
+
+                        if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, 3, 0))))
+                        {
+                            EsteLisäYlös += 1;
+                        }
+                        if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, 3, 0))))
+                        {
+                            EsteLisäYlös += 1;
+                        }
                     }
-                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(uusipaikka + new Vector3(0, 1, 0))))
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, 2, 0))))
                     {
                         EsteLisäYlös += 1;
                     }
@@ -265,30 +319,42 @@ public class VihuLiikkuminen : MonoBehaviour {
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "ylös";
-                    File.WriteAllText(testausvasen, ("tapahtuivasen"));
+                    File.WriteAllText(testausylös, ("tapahtuiylös"));
                     vihuliikkunut = true;
                     EsteLisäYlös = 0;
                     EsteLisäAlas = 0;
                     EsteLisäOikea = 0;
                     EsteLisäVasen = 0;
+                    SaaRikkoa = false;
+                    return;
                 }
+
             }
-            else if (target.y + EsteLisäAlas == transform.position.y && Mathf.Abs(target.x - transform.position.x) <= Mathf.Abs(target.y - transform.position.y))
+            else if (target.y + EsteLisäAlas < transform.position.y && Mathf.Abs(target.x - transform.position.x) > Mathf.Abs(target.y - transform.position.y))
             {
-                //xDir = -1f;
-                
-                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka)) && SaaRikkoa == false)
+                //yDir = -1f;
+
+                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -1, 0))) && SaaRikkoa == false)
                 {
-                    EsteLisäAlas = 1;
-                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(uusipaikka)))
+                    EsteLisäAlas = 2;
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, -1, 0))))
                     {
                         EsteLisäAlas += 1;
                     }
-                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka + new Vector3(0, -1, 0))))
+                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -2, 0))))
                     {
                         EsteLisäAlas += 1;
+
+                        if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -3, 0))))
+                        {
+                            EsteLisäAlas += 1;
+                        }
+                        if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, -3, 0))))
+                        {
+                            EsteLisäAlas += 1;
+                        }
                     }
-                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(uusipaikka + new Vector3(0, -1, 0))))
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, -2, 0))))
                     {
                         EsteLisäAlas += 1;
                     }
@@ -305,30 +371,42 @@ public class VihuLiikkuminen : MonoBehaviour {
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "alas";
-                    File.WriteAllText(testausvasen, ("tapahtuivasen"));
+                    File.WriteAllText(testausalas, ("tapahtuialas"));
                     vihuliikkunut = true;
                     EsteLisäYlös = 0;
                     EsteLisäAlas = 0;
                     EsteLisäOikea = 0;
                     EsteLisäVasen = 0;
+                    SaaRikkoa = false;
+                    return;
                 }
             }
-            else if (target.x + EsteLisäOikea == transform.position.x && Mathf.Abs(target.x - transform.position.x) >= Mathf.Abs(target.y - transform.position.y))
+
+            else if (target.x > transform.position.x + EsteLisäOikea && Mathf.Abs(target.x - transform.position.x) < Mathf.Abs(target.y - transform.position.y))
             {
-                //xDir = -1f;
-                
-                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka)) && SaaRikkoa == false)
+                //xDir = 1f;
+
+                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(1, 0, 0))) && SaaRikkoa == false)
                 {
-                    EsteLisäOikea = 1;
-                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(uusipaikka)))
+                    EsteLisäOikea = 2;
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(1, 0, 0))))
                     {
                         EsteLisäOikea += 1;
                     }
-                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka + new Vector3(1, 0, 0))))
+                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(2, 0, 0))))
                     {
                         EsteLisäOikea += 1;
+
+                        if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(3, 0, 0))))
+                        {
+                            EsteLisäOikea += 1;
+                        }
+                        if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(3, 0, 0))))
+                        {
+                            EsteLisäOikea += 1;
+                        }
                     }
-                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(uusipaikka + new Vector3(1, 0, 0))))
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(2, 0, 0))))
                     {
                         EsteLisäOikea += 1;
                     }
@@ -345,30 +423,41 @@ public class VihuLiikkuminen : MonoBehaviour {
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "oikea";
-                    File.WriteAllText(testausvasen, ("tapahtuivasen"));
+                    File.WriteAllText(testausoikea, ("tapahtuioikea"));
                     vihuliikkunut = true;
                     EsteLisäYlös = 0;
                     EsteLisäAlas = 0;
                     EsteLisäOikea = 0;
                     EsteLisäVasen = 0;
+                    SaaRikkoa = false;
+                    return;
                 }
             }
-            else if (target.x + EsteLisäVasen == transform.position.x && Mathf.Abs(target.x - transform.position.x) >= Mathf.Abs(target.y - transform.position.y))
+            else if (target.x + EsteLisäVasen < transform.position.x && Mathf.Abs(target.x - transform.position.x) < Mathf.Abs(target.y - transform.position.y))
             {
                 //xDir = -1f;
-                
-                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka)) && SaaRikkoa == false)
+
+                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(-1, 0, 0))) && SaaRikkoa == false)
                 {
-                    EsteLisäVasen = 1;
-                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(uusipaikka)))
+                    EsteLisäVasen = 2;
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(-1, 0, 0))))
                     {
                         EsteLisäVasen += 1;
                     }
-                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka + new Vector3(-1, 0, 0))))
+                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka + new Vector3(-2, 0, 0))))
                     {
                         EsteLisäVasen += 1;
+
+                        if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(-3, 0, 0))))
+                        {
+                            EsteLisäVasen += 1;
+                        }
+                        if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(-3, 0, 0))))
+                        {
+                            EsteLisäVasen += 1;
+                        }
                     }
-                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(uusipaikka + new Vector3(-1, 0, 0))))
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(uusipaikka + new Vector3(-2, 0, 0))))
                     {
                         EsteLisäVasen += 1;
                     }
@@ -391,6 +480,434 @@ public class VihuLiikkuminen : MonoBehaviour {
                     EsteLisäAlas = 0;
                     EsteLisäOikea = 0;
                     EsteLisäVasen = 0;
+                    SaaRikkoa = false;
+                    return;
+                }
+            }
+
+
+
+            //------------------------------------------------------------------SAMA MATKA-------------------------------------------------------------------- -
+
+            if (target.y == transform.position.y + EsteLisäYlös && target.y > transform.position.y && Mathf.Abs(target.x - transform.position.x) > Mathf.Abs(target.y - transform.position.y))
+            {
+                //yDir = 1f;
+
+                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, 1, 0))) && SaaRikkoa == false)
+                {
+                    EsteLisäYlös = 2;
+
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, 1, 0))))
+                    {
+                        EsteLisäYlös += 1;
+                    }
+                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, 2, 0))))
+                    {
+                        EsteLisäYlös += 1;
+
+                        if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, 3, 0))))
+                        {
+                            EsteLisäYlös += 1;
+                        }
+                        if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, 3, 0))))
+                        {
+                            EsteLisäYlös += 1;
+                        }
+                    }
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, 2, 0))))
+                    {
+                        EsteLisäYlös += 1;
+                    }
+                    SaaRikkoa = true;
+                    vihuliikkunut = false;
+                    return;
+                }
+                else
+                {
+                    //transform.position = paikka + suunta ;
+                    suunta = Vector3.up;
+                    uusipaikka = suunta + paikka;
+                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    paikka = uusipaikka;
+                    transform.position = paikka;
+                    VihuViimeliike = "ylös";
+                    File.WriteAllText(testausylös, ("tapahtuiylös"));
+                    vihuliikkunut = true;
+                    EsteLisäYlös = 0;
+                    EsteLisäAlas = 0;
+                    EsteLisäOikea = 0;
+                    EsteLisäVasen = 0;
+                    SaaRikkoa = false;
+                    return;
+                }
+
+            }
+            else if (target.y + EsteLisäAlas == transform.position.y && target.y < transform.position.y && Mathf.Abs(target.x - transform.position.x) > Mathf.Abs(target.y - transform.position.y))
+            {
+                //yDir = -1f;
+
+                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -1, 0))) && SaaRikkoa == false)
+                {
+                    EsteLisäAlas = 2;
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, -1, 0))))
+                    {
+                        EsteLisäAlas += 1;
+                    }
+                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -2, 0))))
+                    {
+                        EsteLisäAlas += 1;
+
+                        if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -3, 0))))
+                        {
+                            EsteLisäAlas += 1;
+                        }
+                        if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, -3, 0))))
+                        {
+                            EsteLisäAlas += 1;
+                        }
+                    }
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, -2, 0))))
+                    {
+                        EsteLisäAlas += 1;
+                    }
+                    SaaRikkoa = true;
+                    vihuliikkunut = false;
+                    return;
+                }
+                else
+                {
+                    //transform.position = paikka + suunta ;
+                    suunta = Vector3.down;
+                    uusipaikka = suunta + paikka;
+                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    paikka = uusipaikka;
+                    transform.position = paikka;
+                    VihuViimeliike = "alas";
+                    File.WriteAllText(testausalas, ("tapahtuialas"));
+                    vihuliikkunut = true;
+                    EsteLisäYlös = 0;
+                    EsteLisäAlas = 0;
+                    EsteLisäOikea = 0;
+                    EsteLisäVasen = 0;
+                    SaaRikkoa = false;
+                    return;
+                }
+            }
+
+            else if (target.x == transform.position.x + EsteLisäOikea && target.x > transform.position.x && Mathf.Abs(target.x - transform.position.x) < Mathf.Abs(target.y - transform.position.y))
+            {
+                //xDir = 1f;
+
+                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(1, 0, 0))) && SaaRikkoa == false)
+                {
+                    EsteLisäOikea = 2;
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(1, 0, 0))))
+                    {
+                        EsteLisäOikea += 1;
+                    }
+                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(2, 0, 0))))
+                    {
+                        EsteLisäOikea += 1;
+
+                        if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(3, 0, 0))))
+                        {
+                            EsteLisäOikea += 1;
+                        }
+                        if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(3, 0, 0))))
+                        {
+                            EsteLisäOikea += 1;
+                        }
+                    }
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(2, 0, 0))))
+                    {
+                        EsteLisäOikea += 1;
+                    }
+                    SaaRikkoa = true;
+                    vihuliikkunut = false;
+                    return;
+                }
+                else
+                {
+                    //transform.position = paikka + suunta ;
+                    suunta = Vector3.right;
+                    uusipaikka = suunta + paikka;
+                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    paikka = uusipaikka;
+                    transform.position = paikka;
+                    VihuViimeliike = "oikea";
+                    File.WriteAllText(testausoikea, ("tapahtuioikea"));
+                    vihuliikkunut = true;
+                    EsteLisäYlös = 0;
+                    EsteLisäAlas = 0;
+                    EsteLisäOikea = 0;
+                    EsteLisäVasen = 0;
+                    SaaRikkoa = false;
+                    return;
+                }
+            }
+            else if (target.x + EsteLisäVasen == transform.position.x && target.x < transform.position.x && Mathf.Abs(target.x - transform.position.x) < Mathf.Abs(target.y - transform.position.y))
+            {
+                //xDir = -1f;
+
+                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(-1, 0, 0))) && SaaRikkoa == false)
+                {
+                    EsteLisäVasen = 2;
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(-1, 0, 0))))
+                    {
+                        EsteLisäVasen += 1;
+                    }
+                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka + new Vector3(-2, 0, 0))))
+                    {
+                        EsteLisäVasen += 1;
+
+                        if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(-3, 0, 0))))
+                        {
+                            EsteLisäVasen += 1;
+                        }
+                        if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(-3, 0, 0))))
+                        {
+                            EsteLisäVasen += 1;
+                        }
+                    }
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(uusipaikka + new Vector3(-2, 0, 0))))
+                    {
+                        EsteLisäVasen += 1;
+                    }
+                    SaaRikkoa = true;
+                    vihuliikkunut = false;
+                    return;
+                }
+                else
+                {
+                    //transform.position = paikka + suunta ;
+                    suunta = Vector3.left;
+                    uusipaikka = suunta + paikka;
+                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    paikka = uusipaikka;
+                    transform.position = paikka;
+                    VihuViimeliike = "vasen";
+                    File.WriteAllText(testausvasen, ("tapahtuivasen"));
+                    vihuliikkunut = true;
+                    EsteLisäYlös = 0;
+                    EsteLisäAlas = 0;
+                    EsteLisäOikea = 0;
+                    EsteLisäVasen = 0;
+                    SaaRikkoa = false;
+                    return;
+                }
+            }
+
+
+
+
+
+            //------------------------------------------------------------------------------ONGELMA 2-------------------------------------------------------------------------------------------------------------------------
+
+            if (target.y < transform.position.y + EsteLisäYlös && target.y > transform.position.y && Mathf.Abs(target.x - transform.position.x) < Mathf.Abs(target.y - transform.position.y))
+            {
+                //yDir = 1f;
+
+                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, 1, 0))) && SaaRikkoa == false)
+                {
+                    EsteLisäYlös = 2;
+
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, 1, 0))))
+                    {
+                        EsteLisäYlös += 1;
+                    }
+                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, 2, 0))))
+                    {
+                        EsteLisäYlös += 1;
+
+                        if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, 3, 0))))
+                        {
+                            EsteLisäYlös += 1;
+                        }
+                        if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, 3, 0))))
+                        {
+                            EsteLisäYlös += 1;
+                        }
+                    }
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, 2, 0))))
+                    {
+                        EsteLisäYlös += 1;
+                    }
+                    SaaRikkoa = true;
+                    vihuliikkunut = false;
+                    return;
+                }
+                else
+                {
+                    //transform.position = paikka + suunta ;
+                    suunta = Vector3.up;
+                    uusipaikka = suunta + paikka;
+                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    paikka = uusipaikka;
+                    transform.position = paikka;
+                    VihuViimeliike = "ylös";
+                    File.WriteAllText(testausylös, ("tapahtuiylös"));
+                    vihuliikkunut = true;
+                    EsteLisäYlös = 0;
+                    EsteLisäAlas = 0;
+                    EsteLisäOikea = 0;
+                    EsteLisäVasen = 0;
+                    SaaRikkoa = false;
+                    return;
+                }
+
+            }
+            else if (target.y + EsteLisäAlas > transform.position.y && target.y < transform.position.y && Mathf.Abs(target.x - transform.position.x) < Mathf.Abs(target.y - transform.position.y))
+            {
+                //yDir = -1f;
+
+                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -1, 0))) && SaaRikkoa == false)
+                {
+                    EsteLisäAlas = 2;
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, -1, 0))))
+                    {
+                        EsteLisäAlas += 1;
+                    }
+                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -2, 0))))
+                    {
+                        EsteLisäAlas += 1;
+
+                        if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -3, 0))))
+                        {
+                            EsteLisäAlas += 1;
+                        }
+                        if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, -3, 0))))
+                        {
+                            EsteLisäAlas += 1;
+                        }
+                    }
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, -2, 0))))
+                    {
+                        EsteLisäAlas += 1;
+                    }
+                    SaaRikkoa = true;
+                    vihuliikkunut = false;
+                    return;
+                }
+                else
+                {
+                    //transform.position = paikka + suunta ;
+                    suunta = Vector3.down;
+                    uusipaikka = suunta + paikka;
+                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    paikka = uusipaikka;
+                    transform.position = paikka;
+                    VihuViimeliike = "alas";
+                    File.WriteAllText(testausalas, ("tapahtuialas"));
+                    vihuliikkunut = true;
+                    EsteLisäYlös = 0;
+                    EsteLisäAlas = 0;
+                    EsteLisäOikea = 0;
+                    EsteLisäVasen = 0;
+                    SaaRikkoa = false;
+                    return;
+                }
+            }
+
+            else if (target.x < transform.position.x + EsteLisäOikea && target.x > transform.position.x && Mathf.Abs(target.x - transform.position.x) > Mathf.Abs(target.y - transform.position.y))
+            {
+                //xDir = 1f;
+
+                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(1, 0, 0))) && SaaRikkoa == false)
+                {
+                    EsteLisäOikea = 2;
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(1, 0, 0))))
+                    {
+                        EsteLisäOikea += 1;
+                    }
+                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(2, 0, 0))))
+                    {
+                        EsteLisäOikea += 1;
+
+                        if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(3, 0, 0))))
+                        {
+                            EsteLisäOikea += 1;
+                        }
+                        if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(3, 0, 0))))
+                        {
+                            EsteLisäOikea += 1;
+                        }
+                    }
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(2, 0, 0))))
+                    {
+                        EsteLisäOikea += 1;
+                    }
+                    SaaRikkoa = true;
+                    vihuliikkunut = false;
+                    return;
+                }
+                else
+                {
+                    //transform.position = paikka + suunta ;
+                    suunta = Vector3.right;
+                    uusipaikka = suunta + paikka;
+                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    paikka = uusipaikka;
+                    transform.position = paikka;
+                    VihuViimeliike = "oikea";
+                    File.WriteAllText(testausoikea, ("tapahtuioikea"));
+                    vihuliikkunut = true;
+                    EsteLisäYlös = 0;
+                    EsteLisäAlas = 0;
+                    EsteLisäOikea = 0;
+                    EsteLisäVasen = 0;
+                    SaaRikkoa = false;
+                    return;
+                }
+            }
+            else if (target.x + EsteLisäVasen > transform.position.x && target.x < transform.position.x && Mathf.Abs(target.x - transform.position.x) > Mathf.Abs(target.y - transform.position.y))
+            {
+                //xDir = -1f;
+
+                if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(-1, 0, 0))) && SaaRikkoa == false)
+                {
+                    EsteLisäVasen = 2;
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(-1, 0, 0))))
+                    {
+                        EsteLisäVasen += 1;
+                    }
+                    if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka + new Vector3(-2, 0, 0))))
+                    {
+                        EsteLisäVasen += 1;
+
+                        if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(-3, 0, 0))))
+                        {
+                            EsteLisäVasen += 1;
+                        }
+                        if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(-3, 0, 0))))
+                        {
+                            EsteLisäVasen += 1;
+                        }
+                    }
+                    if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(uusipaikka + new Vector3(-2, 0, 0))))
+                    {
+                        EsteLisäVasen += 1;
+                    }
+                    SaaRikkoa = true;
+                    vihuliikkunut = false;
+                    return;
+                }
+                else
+                {
+                    //transform.position = paikka + suunta ;
+                    suunta = Vector3.left;
+                    uusipaikka = suunta + paikka;
+                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    paikka = uusipaikka;
+                    transform.position = paikka;
+                    VihuViimeliike = "vasen";
+                    File.WriteAllText(testausvasen, ("tapahtuivasen"));
+                    vihuliikkunut = true;
+                    EsteLisäYlös = 0;
+                    EsteLisäAlas = 0;
+                    EsteLisäOikea = 0;
+                    EsteLisäVasen = 0;
+                    SaaRikkoa = false;
+                    return;
                 }
             }
 
