@@ -65,6 +65,14 @@ public class VihuLiikkuminen : MonoBehaviour {
             
             
 
+
+
+            //--------------------------------------------------------EKA OSIO--------------------------------------------------------------------
+
+
+
+
+
             if (target.y > transform.position.y + EsteLisäYlös && Mathf.Abs(target.x - transform.position.x) <= Mathf.Abs(target.y - transform.position.y))
             {
                 //yDir = 1f;
@@ -275,7 +283,18 @@ public class VihuLiikkuminen : MonoBehaviour {
 
 
 
+
+
+
+
             //------------------------------------------------------------------ONGELMA 1-------------------------------------------------------------------- -
+
+
+
+
+
+
+
 
             if (target.y > transform.position.y + EsteLisäYlös && Mathf.Abs(target.x - transform.position.x) > Mathf.Abs(target.y - transform.position.y))
             {
@@ -487,7 +506,20 @@ public class VihuLiikkuminen : MonoBehaviour {
 
 
 
+
+
+
+
+
             //------------------------------------------------------------------SAMA MATKA-------------------------------------------------------------------- -
+
+
+
+
+
+
+
+
 
             if (target.y == transform.position.y + EsteLisäYlös && target.y > transform.position.y && Mathf.Abs(target.x - transform.position.x) > Mathf.Abs(target.y - transform.position.y))
             {
@@ -701,7 +733,16 @@ public class VihuLiikkuminen : MonoBehaviour {
 
 
 
+
+
             //------------------------------------------------------------------------------ONGELMA 2-------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
 
             if (target.y < transform.position.y + EsteLisäYlös && target.y > transform.position.y && Mathf.Abs(target.x - transform.position.x) < Mathf.Abs(target.y - transform.position.y))
             {

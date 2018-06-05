@@ -84,6 +84,7 @@
     <Compile Include="Assets\Koodit\Movement\RuutuLiikkuminen2.cs" />
     <Compile Include="Assets\Koodit\Movement\RuutuLiikkuminen3.cs" />
     <Compile Include="Assets\Koodit\Movement\VihuLiikkuminen.cs" />
+    <Compile Include="Assets\Koodit\Movement\VihuLiikkuminenIlmanCollisionia.cs" />
     <Compile Include="Assets\Koodit\Movement\VihuLiikkuminenIlmanSuunnistamista.cs" />
     <Compile Include="Assets\Koodit\Movement\Wander.cs" />
     <Compile Include="Assets\Koodit\Muita\Atrributes\BulletAttribute.cs" />
