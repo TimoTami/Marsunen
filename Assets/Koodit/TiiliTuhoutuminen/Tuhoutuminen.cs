@@ -75,6 +75,15 @@ public class Tuhoutuminen : MonoBehaviour
 
                 tilemap.SetTile(tilemap.WorldToCell(PelaajaAiempiHitInt), null);
 
+                if (RuutuLiikkuminen3.Instance.Kypärä == true)
+                {
+                    RuutuLiikkuminen3.Instance.KypäränHealth -= 1;
+                }
+                if (RuutuLiikkuminen3.Instance.Kypärä == false)
+                {
+                    RuutuLiikkuminen3.Instance.PelaajanHealth -= 1;
+                }
+
                 if (tilemap.HasTile(tilemap.WorldToCell(PelaajaAiempiHitInt))==false)
                 {
                     se = "Kyllä";

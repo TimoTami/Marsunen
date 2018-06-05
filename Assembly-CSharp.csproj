@@ -80,6 +80,7 @@
     <Compile Include="Assets\Koodit\Movement\PickUpAndHold.cs" />
     <Compile Include="Assets\Koodit\Movement\PushWithButton.cs" />
     <Compile Include="Assets\Koodit\Movement\RotateWithArrows.cs" />
+    <Compile Include="Assets\Koodit\Movement\RottaLiikkuminen.cs" />
     <Compile Include="Assets\Koodit\Movement\RuutuLiikkuminen.cs" />
     <Compile Include="Assets\Koodit\Movement\RuutuLiikkuminen2.cs" />
     <Compile Include="Assets\Koodit\Movement\RuutuLiikkuminen3.cs" />
@@ -107,6 +108,11 @@
     <Compile Include="Assets\Koodit\Muita\Creation\AutoObjectSpawner.cs" />
     <Compile Include="Assets\Koodit\Muita\Creation\ObjectShooter.cs" />
     <Compile Include="Assets\Koodit\Muita\Destruction\TimedSelfDestruct.cs" />
+    <Compile Include="Assets\Koodit\Muita\Keräily.cs" />
+    <Compile Include="Assets\Koodit\PathFinding\2dTileBasedPathFinding\Grid.cs" />
+    <Compile Include="Assets\Koodit\PathFinding\2dTileBasedPathFinding\Node.cs" />
+    <Compile Include="Assets\Koodit\PathFinding\2dTileBasedPathFinding\PathFinding.cs" />
+    <Compile Include="Assets\Koodit\PathFinding\2dTileBasedPathFinding\Point.cs" />
     <Compile Include="Assets\Koodit\TiiliTuhoutuminen\Tuhoutuminen.cs" />
     <Compile Include="Assets\Koodit\TiiliTuhoutuminen\TuhoutuminenAlempiLayer.cs" />
     <Compile Include="Assets\Koodit\TiiliTuhoutuminen\VihuTuhoutuminen.cs" />

@@ -94,8 +94,16 @@ public class TuhoutuminenAlempiLayer : MonoBehaviour
                     //RuutuLiikkuminen3.Instance.liikkunut = true;
                     tiilihealth -= 1;
                     rikkitilemap.SetTile(rikkitilemap.WorldToCell(PelaajaHitPosition1Int), null);
-
+                if (RuutuLiikkuminen3.Instance.Kypärä == true)
+                {
+                    RuutuLiikkuminen3.Instance.KypäränHealth -= 1;
                 }
+                if (RuutuLiikkuminen3.Instance.Kypärä == false)
+                {
+                    RuutuLiikkuminen3.Instance.PelaajanHealth -= 1;
+                }
+
+            }
             }
         
     }

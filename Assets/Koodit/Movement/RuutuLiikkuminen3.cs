@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class RuutuLiikkuminen3 : MonoBehaviour
 {
+    public bool Kypärä;
+    public int KypäränHealth;
     public bool liikkunut;
+    public int PelaajanHealth;
     public string PelaajaViimeliike;
     public string l;
     public Vector3 pos;                                // For movement
@@ -23,11 +27,13 @@ public class RuutuLiikkuminen3 : MonoBehaviour
 
     void Awake()
     {
+        //SceneManager.LoadScene("HamsteriScene");
         Instance = this;
     }
 
         public void Start()
     {
+        PelaajanHealth = 60;
         liikkunut = false;
         pos = transform.position;          // Take the initial position
  
@@ -37,7 +43,22 @@ public class RuutuLiikkuminen3 : MonoBehaviour
 
     }
 
-
+    public void Update()
+    {
+        if (PelaajanHealth <= 0)
+        {
+            SceneManager.LoadScene("HamsteriScene");
+            //Application.LoadLevel(Application.loadedLevel);
+        }
+        if (Kypärä == true)
+        {
+            
+            if (KypäränHealth <= 0)
+            {
+                Kypärä = false;
+            }
+        }
+    }
     public void FixedUpdate()
     {
         liikkunut = false;
