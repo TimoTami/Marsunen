@@ -12,10 +12,12 @@ public class VihuTuhoutuminenAlempiLayer : MonoBehaviour
 
 
     public GameObject VihuGameObject;
+    public GameObject VihuGameObject2;
     public Vector3 PelaajaHitPosition1;
     public Vector3Int PelaajaHitPosition1Int;
     public Vector3 VihuHitPosition1;
     public Vector3Int VihuHitPosition1Int;
+    public Vector3Int VihuHitPosition2Int;
     public int tiilihealth;
     public string osunut;
 
@@ -29,13 +31,7 @@ public class VihuTuhoutuminenAlempiLayer : MonoBehaviour
 
     void Start()
     {
-        if (VihuGameObject != null)
-        {
-
-
-            tiilihealth = 2;
-
-        }
+       
     }
 
 
@@ -59,9 +55,17 @@ public class VihuTuhoutuminenAlempiLayer : MonoBehaviour
                 {
                     VihuHitPosition1Int = new Vector3Int((Mathf.RoundToInt(hit.point.x - 0.01f)), (Mathf.RoundToInt(hit.point.y - 0.01f)), 0);
                 }
-                else if (VihuLiikkuminen.Instance.VihuViimeliike == "ylös" || VihuLiikkuminen.Instance.VihuViimeliike == "oikea")
+                if (VihuLiikkuminen.Instance.VihuViimeliike == "ylös" || VihuLiikkuminen.Instance.VihuViimeliike == "oikea")
                 {
                     VihuHitPosition1Int = new Vector3Int((Mathf.RoundToInt(hit.point.x + 0.01f)), (Mathf.RoundToInt(hit.point.y + 0.01f)), 0);
+                }
+                if (VihuLiikkuminenEiAgressiivinen.Instance.VihuViimeliike == "alas" || VihuLiikkuminenEiAgressiivinen.Instance.VihuViimeliike == "vasen")
+                {
+                VihuHitPosition2Int = new Vector3Int((Mathf.RoundToInt(hit.point.x - 0.01f)), (Mathf.RoundToInt(hit.point.y - 0.01f)), 0);
+                }
+                if (VihuLiikkuminenEiAgressiivinen.Instance.VihuViimeliike == "ylös" || VihuLiikkuminenEiAgressiivinen.Instance.VihuViimeliike == "oikea")
+                {
+                VihuHitPosition2Int = new Vector3Int((Mathf.RoundToInt(hit.point.x + 0.01f)), (Mathf.RoundToInt(hit.point.y + 0.01f)), 0);
                 }
 
 
@@ -93,6 +97,35 @@ public class VihuTuhoutuminenAlempiLayer : MonoBehaviour
                     VihuLiikkuminen.Instance.transform.position = VihuLiikkuminen.Instance.paikka;
                     TuhoutuminenAlempiLayer.Instance.rikkitilemap.SetTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(VihuHitPosition1Int), null);
                     VihuLiikkuminen.Instance.vihuliikkunut = true;
+                }
+                if ((Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(VihuHitPosition2Int)) == false) && VihuTuhoutuminen.Instance.OnTuhoutunutVihu == true && VihuGameObject2 == VihucollisionAlempi.gameObject)
+                {
+                    osunut = "ei2";
+
+
+
+                    if (VihuLiikkuminenEiAgressiivinen.Instance.VihuViimeliike == "ylös")
+                    {
+                        VihuLiikkuminenEiAgressiivinen.Instance.uusipaikka += new Vector3(0f, -0.5f, 0f);
+                    }
+                    else if (VihuLiikkuminenEiAgressiivinen.Instance.VihuViimeliike == "alas")
+                    {
+                        VihuLiikkuminenEiAgressiivinen.Instance.uusipaikka += new Vector3(0f, 0.5f, 0f);
+                    }
+                    else if (VihuLiikkuminenEiAgressiivinen.Instance.VihuViimeliike == "vasen")
+                    {
+                        VihuLiikkuminenEiAgressiivinen.Instance.uusipaikka += new Vector3(0.5f, 0f, 0f);
+                    }
+                    else if (VihuLiikkuminenEiAgressiivinen.Instance.VihuViimeliike == "oikea")
+                    {
+                        VihuLiikkuminenEiAgressiivinen.Instance.uusipaikka += new Vector3(-0.5f, 0f, 0f);
+                    }
+
+                    VihuLiikkuminenEiAgressiivinen.Instance.transform.position = Vector3.MoveTowards(VihuLiikkuminenEiAgressiivinen.Instance.transform.position, VihuLiikkuminenEiAgressiivinen.Instance.uusipaikka, Time.deltaTime * VihuLiikkuminenEiAgressiivinen.Instance.vihuspeed);
+                    VihuLiikkuminenEiAgressiivinen.Instance.paikka = VihuLiikkuminenEiAgressiivinen.Instance.uusipaikka;
+                    VihuLiikkuminenEiAgressiivinen.Instance.transform.position = VihuLiikkuminenEiAgressiivinen.Instance.paikka;
+                    TuhoutuminenAlempiLayer.Instance.rikkitilemap.SetTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(VihuHitPosition2Int), null);
+                    VihuLiikkuminenEiAgressiivinen.Instance.vihuliikkunut = true;
                 }
 
             }

@@ -63,12 +63,17 @@ public class RuutuLiikkuminen3 : MonoBehaviour
     {
         liikkunut = false;
 
-        if (VihuLiikkuminen.Instance.vihuliikkunut==false)
+        if (VihuLiikkuminen.Instance.vihuliikkunut==false&&VihuLiikkuminenEiAgressiivinen.Instance.vihuliikkunut==false)
         {
             liikkunut = true;
             return;
         }
-        else if (transform.position == pos&&VihuLiikkuminen.Instance.vihuliikkunut==true)
+        if(VihuLiikkuminen.Instance.SaaRikkoa==true||VihuLiikkuminenEiAgressiivinen.Instance.SaaRikkoa==true)
+        {
+            liikkunut = true;
+            return;
+        }
+        else if (transform.position == pos&&VihuLiikkuminen.Instance.vihuliikkunut==true&&VihuLiikkuminenEiAgressiivinen.Instance.vihuliikkunut==true)
         {
             
             l = "ei saa liikkua";
@@ -122,6 +127,7 @@ public class RuutuLiikkuminen3 : MonoBehaviour
                 liikkunut = true;
             }
         }
+       
 
             transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * speed);    // Move there
         

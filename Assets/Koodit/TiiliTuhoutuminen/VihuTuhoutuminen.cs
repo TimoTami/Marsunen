@@ -13,8 +13,10 @@ public class VihuTuhoutuminen : MonoBehaviour
     public bool OnTuhoutunutVihu;
     
     public GameObject VihuGameObject;
+    public GameObject VihuGameObject2;
     public Vector3 PelaajaHitPosition;
     public Vector3Int VihuAiempiHitInt;
+    public Vector3Int VihuAiempiHitInt2;
     public Vector3 VihuHitPosition;
     public Vector3Int VihuAiempiHitPosition;
 
@@ -105,11 +107,80 @@ public class VihuTuhoutuminen : MonoBehaviour
                 }
             }
         }
+        if (VihuGameObject2 == Vihucollision.gameObject)
+        {
+
+
+            foreach (ContactPoint2D hit in Vihucollision.contacts)
+            {
+                PelaajaHitPosition = new Vector3();
+                if (VihuLiikkuminenEiAgressiivinen.Instance.VihuViimeliike == "alas" || VihuLiikkuminenEiAgressiivinen.Instance.VihuViimeliike == "vasen")
+                {
+                    VihuAiempiHitInt2 = new Vector3Int((Mathf.RoundToInt(hit.point.x - 0.01f)), (Mathf.RoundToInt(hit.point.y - 0.01f)), 0);
+                }
+                else if (VihuLiikkuminenEiAgressiivinen.Instance.VihuViimeliike == "ylös" || VihuLiikkuminenEiAgressiivinen.Instance.VihuViimeliike == "oikea")
+                {
+                    VihuAiempiHitInt2 = new Vector3Int((Mathf.RoundToInt(hit.point.x + 0.01f)), (Mathf.RoundToInt(hit.point.y + 0.01f)), 0);
+                }
+
+
+                Tuhoutuminen.Instance.tilemap.SetTile(Tuhoutuminen.Instance.tilemap.WorldToCell(VihuAiempiHitInt2), null);
+
+                //if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(VihuAiempiHitInt)) == false)
+                //{
+                //    se = "Kyllä";
+                //}
+                //if ((Tuhoutuminen.Instance.tilemap.WorldToCell(VihuAiempiHitInt)) == null)
+                //{
+                //    sekö = "Kyllä";
+                //}
+
+                //hit.point - 0.1f * hit.normal;
+
+                if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(VihuAiempiHitInt2)) == false && VihuGameObject2 == Vihucollision.gameObject)
+                {
+
+
+
+                    if (VihuLiikkuminenEiAgressiivinen.Instance.VihuViimeliike == "ylös")
+                    {
+                        VihuLiikkuminenEiAgressiivinen.Instance.uusipaikka += new Vector3(0f, -0.5f, 0f);
+                    }
+                    else if (VihuLiikkuminenEiAgressiivinen.Instance.VihuViimeliike == "alas")
+                    {
+                        VihuLiikkuminenEiAgressiivinen.Instance.uusipaikka += new Vector3(0f, 0.5f, 0f);
+                    }
+                    else if (VihuLiikkuminenEiAgressiivinen.Instance.VihuViimeliike == "vasen")
+                    {
+                        VihuLiikkuminenEiAgressiivinen.Instance.uusipaikka += new Vector3(0.5f, 0f, 0f);
+                    }
+                    else if (VihuLiikkuminenEiAgressiivinen.Instance.VihuViimeliike == "oikea")
+                    {
+                        VihuLiikkuminenEiAgressiivinen.Instance.uusipaikka += new Vector3(-0.5f, 0f, 0f);
+                    }
+
+
+
+                    VihuLiikkuminenEiAgressiivinen.Instance.transform.position = Vector3.MoveTowards(VihuLiikkuminenEiAgressiivinen.Instance.transform.position, VihuLiikkuminenEiAgressiivinen.Instance.uusipaikka, Time.deltaTime * VihuLiikkuminenEiAgressiivinen.Instance.vihuspeed);
+                    VihuLiikkuminenEiAgressiivinen.Instance.paikka = VihuLiikkuminenEiAgressiivinen.Instance.uusipaikka;
+                    VihuLiikkuminenEiAgressiivinen.Instance.transform.position = VihuLiikkuminenEiAgressiivinen.Instance.paikka;
+                    VihuLiikkuminenEiAgressiivinen.Instance.vihuliikkunut = true;
+
+
+
+                }
+            }
+        }
 
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(VihuAiempiHitInt)) == false && TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(VihuAiempiHitInt)) == true)
+        {
+
+            OnTuhoutunutVihu = true;
+        }
+        if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(VihuAiempiHitInt2)) == false && TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(VihuAiempiHitInt2)) == true)
         {
 
             OnTuhoutunutVihu = true;

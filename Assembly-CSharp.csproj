@@ -85,6 +85,7 @@
     <Compile Include="Assets\Koodit\Movement\RuutuLiikkuminen2.cs" />
     <Compile Include="Assets\Koodit\Movement\RuutuLiikkuminen3.cs" />
     <Compile Include="Assets\Koodit\Movement\VihuLiikkuminen.cs" />
+    <Compile Include="Assets\Koodit\Movement\VihuLiikkuminenEiAgressiivinen.cs" />
     <Compile Include="Assets\Koodit\Movement\VihuLiikkuminenIlmanCollisionia.cs" />
     <Compile Include="Assets\Koodit\Movement\VihuLiikkuminenIlmanSuunnistamista.cs" />
     <Compile Include="Assets\Koodit\Movement\Wander.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="Assets\Koodit\PathFinding\2dTileBasedPathFinding\Node.cs" />
     <Compile Include="Assets\Koodit\PathFinding\2dTileBasedPathFinding\PathFinding.cs" />
     <Compile Include="Assets\Koodit\PathFinding\2dTileBasedPathFinding\Point.cs" />
+    <Compile Include="Assets\Koodit\TiiliTuhoutuminen\Reuna.cs" />
     <Compile Include="Assets\Koodit\TiiliTuhoutuminen\Tuhoutuminen.cs" />
     <Compile Include="Assets\Koodit\TiiliTuhoutuminen\TuhoutuminenAlempiLayer.cs" />
     <Compile Include="Assets\Koodit\TiiliTuhoutuminen\VihuTuhoutuminen.cs" />
