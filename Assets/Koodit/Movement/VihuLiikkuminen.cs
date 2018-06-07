@@ -261,6 +261,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.right;
                     uusipaikka = suunta + paikka;
+                    transform.right = uusipaikka - transform.position;
                     transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
@@ -323,6 +324,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.left;
                     uusipaikka = suunta + paikka;
+                    transform.right = uusipaikka - transform.position;
                     transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
@@ -525,6 +527,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.right;
                     uusipaikka = suunta + paikka;
+                    transform.right = uusipaikka - transform.position;
                     transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
@@ -587,6 +590,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.left;
                     uusipaikka = suunta + paikka;
+                    transform.right = uusipaikka - transform.position;
                     transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
@@ -792,6 +796,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.right;
                     uusipaikka = suunta + paikka;
+                    transform.right = uusipaikka - transform.position;
                     transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
@@ -854,6 +859,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.left;
                     uusipaikka = suunta + paikka;
+                    transform.right = uusipaikka - transform.position;
                     transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
@@ -1056,6 +1062,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.right;
                     uusipaikka = suunta + paikka;
+                    transform.right = uusipaikka - transform.position;
                     transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
@@ -1118,6 +1125,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.left;
                     uusipaikka = suunta + paikka;
+                    transform.right = uusipaikka - transform.position;
                     transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
@@ -1150,6 +1158,10 @@ public class VihuLiikkuminen : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Physics2D.IgnoreLayerCollision(28, 28);
+        //if ((Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(VihuTuhoutuminen.Instance.VihuHitInt)) == true) || (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(VihuTuhoutuminenAlempiLayer.Instance.VihuHitIntAlempi)) == true) || (Reuna.Instance.ReunaTilemap.HasTile(Reuna.Instance.ReunaTilemap.WorldToCell(VihuTuhoutuminen.Instance.VihuHitInt)) == true))
+        //{
+        //    Physics2D.IgnoreLayerCollision(28, 29);
+        //}
     }
 }
 

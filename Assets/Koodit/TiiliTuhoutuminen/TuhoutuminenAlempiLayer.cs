@@ -51,7 +51,7 @@ public class TuhoutuminenAlempiLayer : MonoBehaviour
         //    osunut = PelaajaHitPosition1Int.ToString();
             
         //}
-        
+        if(PelaajaGameObject==collisionAlempi.gameObject)
             foreach (ContactPoint2D hit in collisionAlempi.contacts)
             {
                  

@@ -27,7 +27,7 @@ public class Tuhoutuminen : MonoBehaviour
     
     void Start()
     {
-
+        OnTuhoutunut = true;
             if (PelaajaGameObject != null)
             {
                 this.tilemap = GameObject.Find("IlmastointiTilemap").GetComponent<Tilemap>();
@@ -49,8 +49,8 @@ public class Tuhoutuminen : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-
-        OnTuhoutunut = false;
+        if (PelaajaGameObject == collision.gameObject)
+            OnTuhoutunut = false;
         
 
         if (tilemap != null && PelaajaGameObject == collision.gameObject)

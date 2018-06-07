@@ -1,17 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Reuna : MonoBehaviour {
 
     public GameObject PelaajaGameObject;
     public GameObject VihuGameObject;
     public GameObject VihuGameObject2;
+    public Tilemap ReunaTilemap;
 
+    public static Reuna Instance;
+
+    void Awake()
+    {
+        Instance = this;
+    }
     // Use this for initialization
-    void Start () {
-		
-	}
+    void Start()
+    {
+        ReunaTilemap = GameObject.Find("IlmastointiReunaTilemap").GetComponent<Tilemap>();
+    }
+    
 	
 	// Update is called once per frame
 	void Update () {

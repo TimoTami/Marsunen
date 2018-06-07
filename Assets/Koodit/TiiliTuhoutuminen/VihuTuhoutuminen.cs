@@ -11,14 +11,15 @@ public class VihuTuhoutuminen : MonoBehaviour
 
  
     public bool OnTuhoutunutVihu;
-    
+    public bool OnTuhoutunutVihu2;
+
     public GameObject VihuGameObject;
     public GameObject VihuGameObject2;
-    public Vector3 PelaajaHitPosition;
-    public Vector3Int VihuAiempiHitInt;
-    public Vector3Int VihuAiempiHitInt2;
-    public Vector3 VihuHitPosition;
-    public Vector3Int VihuAiempiHitPosition;
+    
+    public Vector3Int VihuHitInt;
+    public Vector3Int VihuHitInt2;
+    
+    
 
     IEnumerator Odota(float Aika)
     {
@@ -34,33 +35,35 @@ public class VihuTuhoutuminen : MonoBehaviour
 
     private void Start()
     {
-        
+        OnTuhoutunutVihu = true;
+        OnTuhoutunutVihu2 = true;
     }
 
     public void OnCollisionEnter2D(Collision2D Vihucollision)
     {
 
-        OnTuhoutunutVihu = false;
+        
+        
 
 
         if ( VihuGameObject == Vihucollision.gameObject)
         {
-
+            OnTuhoutunutVihu = false;
 
             foreach (ContactPoint2D hit in Vihucollision.contacts)
             {
-                PelaajaHitPosition = new Vector3();
+                
                 if (VihuLiikkuminen.Instance.VihuViimeliike == "alas" || VihuLiikkuminen.Instance.VihuViimeliike == "vasen")
                 {
-                    VihuAiempiHitInt = new Vector3Int((Mathf.RoundToInt(hit.point.x - 0.01f)), (Mathf.RoundToInt(hit.point.y - 0.01f)), 0);
+                    VihuHitInt = new Vector3Int((Mathf.RoundToInt(hit.point.x - 0.01f)), (Mathf.RoundToInt(hit.point.y - 0.01f)), 0);
                 }
                 else if (VihuLiikkuminen.Instance.VihuViimeliike == "ylös" || VihuLiikkuminen.Instance.VihuViimeliike == "oikea")
                 {
-                    VihuAiempiHitInt = new Vector3Int((Mathf.RoundToInt(hit.point.x + 0.01f)), (Mathf.RoundToInt(hit.point.y + 0.01f)), 0);
+                    VihuHitInt = new Vector3Int((Mathf.RoundToInt(hit.point.x + 0.01f)), (Mathf.RoundToInt(hit.point.y + 0.01f)), 0);
                 }
                
 
-                Tuhoutuminen.Instance.tilemap.SetTile(Tuhoutuminen.Instance.tilemap.WorldToCell(VihuAiempiHitInt), null);
+                Tuhoutuminen.Instance.tilemap.SetTile(Tuhoutuminen.Instance.tilemap.WorldToCell(VihuHitInt), null);
 
                 //if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(VihuAiempiHitInt)) == false)
                 //{
@@ -73,7 +76,7 @@ public class VihuTuhoutuminen : MonoBehaviour
 
                 //hit.point - 0.1f * hit.normal;
 
-                if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(VihuAiempiHitInt)) == false && VihuGameObject == Vihucollision.gameObject)
+                if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(VihuHitInt)) == false && VihuGameObject == Vihucollision.gameObject)
                 {
 
 
@@ -109,22 +112,22 @@ public class VihuTuhoutuminen : MonoBehaviour
         }
         if (VihuGameObject2 == Vihucollision.gameObject)
         {
-
+            OnTuhoutunutVihu2 = false;
 
             foreach (ContactPoint2D hit in Vihucollision.contacts)
             {
-                PelaajaHitPosition = new Vector3();
+                
                 if (VihuLiikkuminenEiAgressiivinen.Instance.VihuViimeliike == "alas" || VihuLiikkuminenEiAgressiivinen.Instance.VihuViimeliike == "vasen")
                 {
-                    VihuAiempiHitInt2 = new Vector3Int((Mathf.RoundToInt(hit.point.x - 0.01f)), (Mathf.RoundToInt(hit.point.y - 0.01f)), 0);
+                    VihuHitInt2 = new Vector3Int((Mathf.RoundToInt(hit.point.x - 0.01f)), (Mathf.RoundToInt(hit.point.y - 0.01f)), 0);
                 }
                 else if (VihuLiikkuminenEiAgressiivinen.Instance.VihuViimeliike == "ylös" || VihuLiikkuminenEiAgressiivinen.Instance.VihuViimeliike == "oikea")
                 {
-                    VihuAiempiHitInt2 = new Vector3Int((Mathf.RoundToInt(hit.point.x + 0.01f)), (Mathf.RoundToInt(hit.point.y + 0.01f)), 0);
+                    VihuHitInt2 = new Vector3Int((Mathf.RoundToInt(hit.point.x + 0.01f)), (Mathf.RoundToInt(hit.point.y + 0.01f)), 0);
                 }
 
 
-                Tuhoutuminen.Instance.tilemap.SetTile(Tuhoutuminen.Instance.tilemap.WorldToCell(VihuAiempiHitInt2), null);
+                Tuhoutuminen.Instance.tilemap.SetTile(Tuhoutuminen.Instance.tilemap.WorldToCell(VihuHitInt2), null);
 
                 //if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(VihuAiempiHitInt)) == false)
                 //{
@@ -137,7 +140,7 @@ public class VihuTuhoutuminen : MonoBehaviour
 
                 //hit.point - 0.1f * hit.normal;
 
-                if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(VihuAiempiHitInt2)) == false && VihuGameObject2 == Vihucollision.gameObject)
+                if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(VihuHitInt2)) == false && VihuGameObject2 == Vihucollision.gameObject)
                 {
 
 
@@ -175,15 +178,15 @@ public class VihuTuhoutuminen : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(VihuAiempiHitInt)) == false && TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(VihuAiempiHitInt)) == true)
+        if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(VihuHitInt)) == false && TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(VihuHitInt)) == true)
         {
 
             OnTuhoutunutVihu = true;
         }
-        if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(VihuAiempiHitInt2)) == false && TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(VihuAiempiHitInt2)) == true)
+        if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(VihuHitInt2)) == false && TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(VihuHitInt2)) == true)
         {
 
-            OnTuhoutunutVihu = true;
+            OnTuhoutunutVihu2 = true;
         }
 
     }

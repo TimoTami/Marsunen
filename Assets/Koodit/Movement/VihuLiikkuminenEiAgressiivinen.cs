@@ -1161,7 +1161,10 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Physics2D.IgnoreLayerCollision(28, 28);
-
+        //if ((Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(VihuTuhoutuminen.Instance.VihuHitInt2)) == true) || (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(VihuTuhoutuminenAlempiLayer.Instance.VihuHitIntAlempi2)) == true) || (Reuna.Instance.ReunaTilemap.HasTile(Reuna.Instance.ReunaTilemap.WorldToCell(VihuTuhoutuminen.Instance.VihuHitInt2)) == true))
+        //{
+        //    Physics2D.IgnoreLayerCollision(28, 29);
+        //}
     }
 }
 

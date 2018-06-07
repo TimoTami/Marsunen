@@ -15,7 +15,7 @@ public class RuutuLiikkuminen3 : MonoBehaviour
     public string l;
     public Vector3 pos;                                // For movement
     
-    public float speed = 0.02f;                         // Speed of movement
+    public float speed = 2;                         // Speed of movement
 
     public static RuutuLiikkuminen3 Instance;
 

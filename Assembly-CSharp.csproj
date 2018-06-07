@@ -110,6 +110,7 @@
     <Compile Include="Assets\Koodit\Muita\Creation\ObjectShooter.cs" />
     <Compile Include="Assets\Koodit\Muita\Destruction\TimedSelfDestruct.cs" />
     <Compile Include="Assets\Koodit\Muita\Keräily.cs" />
+    <Compile Include="Assets\Koodit\Muita\SpriteVaihto.cs" />
     <Compile Include="Assets\Koodit\PathFinding\2dTileBasedPathFinding\Grid.cs" />
     <Compile Include="Assets\Koodit\PathFinding\2dTileBasedPathFinding\Node.cs" />
     <Compile Include="Assets\Koodit\PathFinding\2dTileBasedPathFinding\PathFinding.cs" />
