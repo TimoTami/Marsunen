@@ -28,7 +28,7 @@ public class Keräily : MonoBehaviour
             
             Destroy(gameObject);
             RuutuLiikkuminen3.Instance.Kypärä = true;
-            RuutuLiikkuminen3.Instance.KypäränHealth = 60;
+            RuutuLiikkuminen3.Instance.KypäränHealth = 20;
 
 
             //if (userInterface != null)

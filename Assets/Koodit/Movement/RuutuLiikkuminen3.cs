@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class RuutuLiikkuminen3 : MonoBehaviour
 {
+    public int RakettiBensa;
     public bool Kypärä;
     public int KypäränHealth;
     public bool liikkunut;
@@ -33,7 +34,8 @@ public class RuutuLiikkuminen3 : MonoBehaviour
 
         public void Start()
     {
-        PelaajanHealth = 60;
+        RakettiBensa = 200;
+        PelaajanHealth = 20;
         liikkunut = false;
         pos = transform.position;          // Take the initial position
  
@@ -45,7 +47,7 @@ public class RuutuLiikkuminen3 : MonoBehaviour
 
     public void Update()
     {
-        if (PelaajanHealth <= 0)
+        if (PelaajanHealth <= 0||RakettiBensa<=0)
         {
             SceneManager.LoadScene("HamsteriScene");
             //Application.LoadLevel(Application.loadedLevel);
@@ -89,6 +91,7 @@ public class RuutuLiikkuminen3 : MonoBehaviour
                 transform.rotation = Quaternion.LookRotation(Vector3.forward, pos - transform.position);
                 l = "saa liikkua";
                 liikkunut = true;
+                RakettiBensa -= 1;
             }
             if (Input.GetKey(KeyCode.D) && transform.position == pos)
             {        // Right
@@ -101,6 +104,7 @@ public class RuutuLiikkuminen3 : MonoBehaviour
                 transform.rotation = Quaternion.LookRotation(Vector3.forward, pos - transform.position);
                 l = "saa liikkua";
                 liikkunut = true;
+                RakettiBensa -= 1;
             }
             if (Input.GetKey(KeyCode.W) && transform.position == pos)
             {        // Up
@@ -113,6 +117,7 @@ public class RuutuLiikkuminen3 : MonoBehaviour
                 transform.rotation = Quaternion.LookRotation(Vector3.forward, pos - transform.position);
                 l = "saa liikkua";
                 liikkunut = true;
+                RakettiBensa -= 1;
             }
             if (Input.GetKey(KeyCode.S) && transform.position == pos)
             {        // Down
@@ -125,12 +130,14 @@ public class RuutuLiikkuminen3 : MonoBehaviour
                 transform.rotation = Quaternion.LookRotation(Vector3.forward, pos - transform.position);
                 l = "saa liikkua";
                 liikkunut = true;
+                RakettiBensa -= 1;
             }
         }
        
 
-            transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * speed);    // Move there
-        
+            transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * speed);
+            
+
 
         if (transform.position==pos)
         {

@@ -103,6 +103,7 @@ public class VihuTuhoutuminen : MonoBehaviour
                     VihuLiikkuminen.Instance.transform.position = Vector3.MoveTowards(VihuLiikkuminen.Instance.transform.position, VihuLiikkuminen.Instance.uusipaikka, Time.deltaTime * VihuLiikkuminen.Instance.vihuspeed);
                     VihuLiikkuminen.Instance.paikka = VihuLiikkuminen.Instance.uusipaikka;
                     VihuLiikkuminen.Instance.transform.position = VihuLiikkuminen.Instance.paikka;
+                    VihuLiikkuminen.Instance.Uudestaan = true;
                     VihuLiikkuminen.Instance.vihuliikkunut = true;
 
 

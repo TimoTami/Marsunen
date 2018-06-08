@@ -92,6 +92,7 @@ public class TuhoutuminenAlempiLayer : MonoBehaviour
 
                     RuutuLiikkuminen3.Instance.transform.position = Vector3.MoveTowards(RuutuLiikkuminen3.Instance.transform.position, RuutuLiikkuminen3.Instance.pos, Time.deltaTime * RuutuLiikkuminen3.Instance.speed);
                     //RuutuLiikkuminen3.Instance.liikkunut = true;
+                    RuutuLiikkuminen3.Instance.RakettiBensa -=1;
                     tiilihealth -= 1;
                     rikkitilemap.SetTile(rikkitilemap.WorldToCell(PelaajaHitPosition1Int), null);
                 if (RuutuLiikkuminen3.Instance.Kypärä == true)

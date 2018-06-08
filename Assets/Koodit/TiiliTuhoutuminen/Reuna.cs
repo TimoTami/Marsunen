@@ -62,7 +62,8 @@ public class Reuna : MonoBehaviour {
                 }
 
                 RuutuLiikkuminen3.Instance.transform.position = Vector3.MoveTowards(RuutuLiikkuminen3.Instance.transform.position, RuutuLiikkuminen3.Instance.pos, Time.deltaTime * RuutuLiikkuminen3.Instance.speed);
-                //RuutuLiikkuminen3.Instance.liikkunut = true;
+                
+               // RuutuLiikkuminen3.Instance.liikkunut = true;
 
             }
 
