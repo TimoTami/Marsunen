@@ -32,7 +32,7 @@ public class RottaLiikkuminen : MonoBehaviour {
                 transform.right = (RotanPaikka + Vector3.left) - transform.position;
                 MatkaVasen += 1;
             }
-            if (MatkaVasen == 20)
+            if (MatkaVasen == 21)
             {
                 MatkaVasen = 0;
                 OnkoSuuntaVasempaan = false;
@@ -48,7 +48,7 @@ public class RottaLiikkuminen : MonoBehaviour {
                 transform.right = (RotanPaikka + Vector3.right) - transform.position;
                 MatkaOikea += 1;
             }
-            if (MatkaOikea == 20)
+            if (MatkaOikea == 21)
             {
                 MatkaOikea = 0;
                 OnkoSuuntaVasempaan = true;

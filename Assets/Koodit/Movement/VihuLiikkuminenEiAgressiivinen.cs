@@ -58,14 +58,12 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
 
     void FixedUpdate()
     {
+        OnkoPitkäMatka = false;
         if (Mathf.Abs(target.x - transform.position.x) >= 5 || (Mathf.Abs(target.y - transform.position.y) >= 5))
         {
             OnkoPitkäMatka = true;
         }
-        else
-        {
-            OnkoPitkäMatka = false;
-        }
+        
         instapaikka = Instance.transform.position;
         target = RuutuLiikkuminen3.Instance.transform.position;
 

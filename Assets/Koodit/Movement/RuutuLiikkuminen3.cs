@@ -12,11 +12,18 @@ public class RuutuLiikkuminen3 : MonoBehaviour
     public int KypäränHealth;
     public bool liikkunut;
     public int PelaajanHealth;
+    public bool Hitsaus;
+    public int HitsausHealth;
     public string PelaajaViimeliike;
     public string l;
     public Vector3 pos;                                // For movement
-    
     public float speed = 2;                         // Speed of movement
+
+    public Tile RikkiTiili;
+    public Tile Tiili;
+
+    public float Viive = 1f;
+    private float AikaaKulunut = 0f;
 
     public static RuutuLiikkuminen3 Instance;
 
@@ -34,6 +41,7 @@ public class RuutuLiikkuminen3 : MonoBehaviour
 
         public void Start()
     {
+
         RakettiBensa = 200;
         PelaajanHealth = 20;
         liikkunut = false;
@@ -47,18 +55,27 @@ public class RuutuLiikkuminen3 : MonoBehaviour
 
     public void Update()
     {
+        AikaaKulunut += Time.deltaTime;
         if (PelaajanHealth <= 0||RakettiBensa<=0)
         {
             SceneManager.LoadScene("HamsteriScene");
             //Application.LoadLevel(Application.loadedLevel);
         }
-        if (Kypärä == true)
+        //if (Kypärä == true)
+        //{
+
+        //    if (KypäränHealth <= 0)
+        //    {
+        //        Kypärä = false;
+        //    }
+        //}
+        if (KypäränHealth <= 0)
         {
-            
-            if (KypäränHealth <= 0)
-            {
-                Kypärä = false;
-            }
+            Kypärä = false;
+        }
+        if(HitsausHealth<=0)
+        {
+            Hitsaus = false;
         }
     }
     public void FixedUpdate()
@@ -77,7 +94,38 @@ public class RuutuLiikkuminen3 : MonoBehaviour
         }
         else if (transform.position == pos&&VihuLiikkuminen.Instance.vihuliikkunut==true&&VihuLiikkuminenEiAgressiivinen.Instance.vihuliikkunut==true)
         {
-            
+            if ((Input.GetKey(KeyCode.LeftArrow)||Input.GetKey(KeyCode.RightArrow)|| Input.GetKey(KeyCode.UpArrow)|| Input.GetKey(KeyCode.DownArrow)) &&  AikaaKulunut >= Viive)
+            {
+                
+                AikaaKulunut = 0f;
+
+                if (Hitsaus == true && Input.GetKey(KeyCode.LeftArrow))
+                {
+                    TuhoutuminenAlempiLayer.Instance.rikkitilemap.SetTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(pos + new Vector3(-1, 0, 0)), RikkiTiili);
+                    Tuhoutuminen.Instance.tilemap.SetTile(Tuhoutuminen.Instance.tilemap.WorldToCell(pos + new Vector3(-1, 0, 0)), Tiili);
+                    HitsausHealth -= 1;
+                }
+                if (Hitsaus == true && Input.GetKey(KeyCode.RightArrow))
+                {
+                    TuhoutuminenAlempiLayer.Instance.rikkitilemap.SetTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(pos + new Vector3(1, 0, 0)), RikkiTiili);
+                    Tuhoutuminen.Instance.tilemap.SetTile(Tuhoutuminen.Instance.tilemap.WorldToCell(pos + new Vector3(1, 0, 0)), Tiili);
+                    HitsausHealth -= 1;
+                }
+                if (Hitsaus == true && Input.GetKey(KeyCode.UpArrow))
+                {
+                    TuhoutuminenAlempiLayer.Instance.rikkitilemap.SetTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(pos + new Vector3(0, 1, 0)), RikkiTiili);
+                    Tuhoutuminen.Instance.tilemap.SetTile(Tuhoutuminen.Instance.tilemap.WorldToCell(pos + new Vector3(0, 1, 0)), Tiili);
+                    HitsausHealth -= 1;
+                }
+                if (Hitsaus == true && Input.GetKey(KeyCode.DownArrow))
+                {
+                    TuhoutuminenAlempiLayer.Instance.rikkitilemap.SetTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(pos + new Vector3(0, -1, 0)), RikkiTiili);
+                    Tuhoutuminen.Instance.tilemap.SetTile(Tuhoutuminen.Instance.tilemap.WorldToCell(pos + new Vector3(0, -1, 0)), Tiili);
+                    HitsausHealth -= 1;
+                }
+            }
+
+
             l = "ei saa liikkua";
             if (Input.GetKey(KeyCode.A) && transform.position == pos)
             {        // Left
