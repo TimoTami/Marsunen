@@ -2353,7 +2353,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.45545566, g: 0.8396226, b: 0.82426614, a: 0}
+  m_BackGroundColor: {r: 0.3192417, g: 0.3192417, b: 0.3207547, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -26053,6 +26053,7 @@ MonoBehaviour:
   "EsteLis\xE4AlasTulos": 0
   "EsteLis\xE4OikeaTulos": 0
   "EsteLis\xE4VasenTulos": 0
+  OnkoKeskiMatka: 0
   "OnkoPitk\xE4Matka": 0
 --- !u!1 &477963471
 GameObject:
@@ -26336,7 +26337,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b68a81479999f834fbaa7ac9bd6ad104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PelaajaGameObject: {fileID: 477963471}
 --- !u!61 &558950317
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27086,9 +27086,8 @@ MonoBehaviour:
   "EsteLis\xE4Alas": 0
   "EsteLis\xE4Oikea": 0
   "EsteLis\xE4Vasen": 0
-  "OnkoPitk\xE4Matka": 0
-  OnkoLyhytMatka: 0
   OnkoKeskiMatka: 0
+  "OnkoPitk\xE4Matka": 0
   Uudestaan: 0
 --- !u!61 &1008656202
 BoxCollider2D:
@@ -27168,7 +27167,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1008656200}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28, y: 26, z: 0}
+  m_LocalPosition: {x: -22, y: 1, z: 0}
   m_LocalScale: {x: 2.59, y: 2.59, z: 0}
   m_Children: []
   m_Father: {fileID: 0}

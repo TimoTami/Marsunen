@@ -4,4 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/HamsteriScene.unity
+    guid: 9696aff3cd62cec4b9c1b85d5cdc4ce6
+  - enabled: 1
+    path: Assets/1TasoMarsu.unity
+    guid: 3d60ad9e66aa0ed419a24ed3351403a3
+  - enabled: 1
+    path: Assets/MarsuVartaassaScene.unity
+    guid: 3877bb1e187b8ec4289c1e0d155b5490
+  - enabled: 1
+    path: Assets/MarsuJaRottaVartaassaScene.unity
+    guid: afa63ebaa527bab4aad9533044a7303e
+  m_configObjects: {}

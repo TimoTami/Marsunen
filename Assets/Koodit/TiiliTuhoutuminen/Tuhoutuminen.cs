@@ -53,7 +53,7 @@ public class Tuhoutuminen : MonoBehaviour
             OnTuhoutunut = false;
         
 
-        if (tilemap != null && PelaajaGameObject == collision.gameObject)
+        if ( PelaajaGameObject == collision.gameObject)
         {
 
 

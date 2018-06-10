@@ -16,7 +16,7 @@ public class VihuLiikkuminen : MonoBehaviour {
     public Vector3 suunta;
     public float matkaX;
     public float matkaY;
-    public float vihuspeed = 0.01f;
+    public float vihuspeed = 1f;
     public string VihuViimeliike;
     public string tapahtuma;
     public int EsteLisäYlös;
@@ -31,10 +31,16 @@ public class VihuLiikkuminen : MonoBehaviour {
     string testausalas = @"C:\Tiedontallennusharjoitus\Testaustiedostoalas.txt";
     string testausoikea = @"C:\Tiedontallennusharjoitus\Testaustiedostooikea.txt";
     string testausvasen = @"C:\Tiedontallennusharjoitus\Testaustiedostovasen.txt";
-    public bool OnkoPitkäMatka;
-    public bool OnkoLyhytMatka;
     public bool OnkoKeskiMatka;
+    public bool OnkoPitkäMatka;
     public bool Uudestaan;
+
+    IEnumerator Odota(float Aika)
+    {
+        yield return new WaitForSeconds(Aika);
+
+    }
+
     //private bool pitkämatka;
     //public void PitkäMatka()
     //{
@@ -1311,8 +1317,8 @@ public class VihuLiikkuminen : MonoBehaviour {
     {
         if (otherCollider.tag == "Player")
         {
-
-            SceneManager.LoadScene("HamsteriScene");
+            SceneManager.LoadScene("MarsuVartaassaScene");
+            
 
 
             
