@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/1TasoMarsu.unity
+- path: Assets/HamsteriScene.unity
   isLoaded: 1
   isActive: 1

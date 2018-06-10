@@ -133,11 +133,11 @@ public class VihuLiikkuminen : MonoBehaviour {
                     EsteLisäYlös = 1;
                     if (OnkoKeskiMatka == true)
                     {
-
+                        EsteLisäYlös = 3;
                     }
                     if (OnkoPitkäMatka==true)
                     {
-                        EsteLisäYlös = 10;
+                        EsteLisäYlös = 15;
                     }
 
                     if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka+new Vector3(0,1,0))))
@@ -147,9 +147,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                     if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka+new Vector3(0, 2, 0))))
                     {
                         EsteLisäYlös += 1;
+                        if (OnkoKeskiMatka == true)
+                        {
+                            EsteLisäYlös = 3;
+                        }
                         if (OnkoPitkäMatka == true)
                         {
-                            EsteLisäYlös = 10;
+                            EsteLisäYlös = 15;
                         }
 
                         if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka+new Vector3(0, 3, 0))))
@@ -197,9 +201,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                 if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -1, 0))) && SaaRikkoa == false)
                 {
                     EsteLisäAlas = 1;
+                    if (OnkoKeskiMatka == true)
+                    {
+                        EsteLisäAlas = 3;
+                    }
                     if (OnkoPitkäMatka == true)
                     {
-                        EsteLisäAlas = 10;
+                        EsteLisäAlas = 15;
                     }
 
                     if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, -1, 0))))
@@ -209,9 +217,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                     if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -2, 0))))
                     {
                         EsteLisäAlas += 1;
+                        if (OnkoKeskiMatka == true)
+                        {
+                            EsteLisäAlas = 3;
+                        }
                         if (OnkoPitkäMatka == true)
                         {
-                            EsteLisäAlas = 10;
+                            EsteLisäAlas = 15;
                         }
 
                         if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -3, 0))))
@@ -259,9 +271,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                 if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(1, 0, 0))) && SaaRikkoa == false)
                 {
                     EsteLisäOikea = 1;
+                    if (OnkoKeskiMatka == true)
+                    {
+                        EsteLisäOikea = 3;
+                    }
                     if (OnkoPitkäMatka == true)
                     {
-                        EsteLisäOikea = 10;
+                        EsteLisäOikea = 15;
                     }
 
                     if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(1, 0, 0))))
@@ -271,9 +287,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                     if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(2, 0, 0))))
                     {
                         EsteLisäOikea += 1;
+                        if (OnkoKeskiMatka == true)
+                        {
+                            EsteLisäOikea = 3;
+                        }
                         if (OnkoPitkäMatka == true)
                         {
-                            EsteLisäOikea = 10;
+                            EsteLisäOikea = 15;
                         }
 
 
@@ -322,9 +342,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                 if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(-1, 0, 0))) && SaaRikkoa == false)
                 {
                     EsteLisäVasen = 1;
+                    if (OnkoKeskiMatka == true)
+                    {
+                        EsteLisäVasen = 3;
+                    }
                     if (OnkoPitkäMatka == true)
                     {
-                        EsteLisäVasen = 10;
+                        EsteLisäVasen = 15;
                     }
 
                     if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(-1, 0, 0))))
@@ -334,9 +358,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                     if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka + new Vector3(-2, 0, 0))))
                     {
                         EsteLisäVasen += 1;
+                        if (OnkoKeskiMatka == true)
+                        {
+                            EsteLisäVasen = 3;
+                        }
                         if (OnkoPitkäMatka == true)
                         {
-                            EsteLisäVasen = 10;
+                            EsteLisäVasen = 15;
                         }
 
 
@@ -401,9 +429,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                 if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, 1, 0))) && SaaRikkoa == false)
                 {
                     EsteLisäYlös = 1;
+                    if (OnkoKeskiMatka == true)
+                    {
+                        EsteLisäYlös = 3;
+                    }
                     if (OnkoPitkäMatka == true)
                     {
-                        EsteLisäYlös = 10;
+                        EsteLisäYlös = 15;
                     }
 
                     if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, 1, 0))))
@@ -413,9 +445,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                     if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, 2, 0))))
                     {
                         EsteLisäYlös += 1;
+                        if (OnkoKeskiMatka == true)
+                        {
+                            EsteLisäYlös = 3;
+                        }
                         if (OnkoPitkäMatka == true)
                         {
-                            EsteLisäYlös = 10;
+                            EsteLisäYlös = 15;
                         }
 
                         if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, 3, 0))))
@@ -463,9 +499,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                 if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -1, 0))) && SaaRikkoa == false)
                 {
                     EsteLisäAlas = 1;
+                    if (OnkoKeskiMatka == true)
+                    {
+                        EsteLisäAlas = 3;
+                    }
                     if (OnkoPitkäMatka == true)
                     {
-                        EsteLisäAlas = 10;
+                        EsteLisäAlas = 15;
                     }
 
                     if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, -1, 0))))
@@ -475,9 +515,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                     if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -2, 0))))
                     {
                         EsteLisäAlas += 1;
+                        if (OnkoKeskiMatka == true)
+                        {
+                            EsteLisäAlas = 3;
+                        }
                         if (OnkoPitkäMatka == true)
                         {
-                            EsteLisäAlas = 10;
+                            EsteLisäAlas = 15;
                         }
 
                         if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -3, 0))))
@@ -525,9 +569,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                 if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(1, 0, 0))) && SaaRikkoa == false)
                 {
                     EsteLisäOikea = 1;
+                    if (OnkoKeskiMatka == true)
+                    {
+                        EsteLisäOikea = 3;
+                    }
                     if (OnkoPitkäMatka == true)
                     {
-                        EsteLisäOikea = 10;
+                        EsteLisäOikea = 15;
                     }
 
                     if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(1, 0, 0))))
@@ -537,9 +585,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                     if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(2, 0, 0))))
                     {
                         EsteLisäOikea += 1;
+                        if (OnkoKeskiMatka == true)
+                        {
+                            EsteLisäOikea = 3;
+                        }
                         if (OnkoPitkäMatka == true)
                         {
-                            EsteLisäOikea = 10;
+                            EsteLisäOikea = 15;
                         }
 
 
@@ -588,9 +640,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                 if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(-1, 0, 0))) && SaaRikkoa == false)
                 {
                     EsteLisäVasen = 1;
+                    if (OnkoKeskiMatka == true)
+                    {
+                        EsteLisäVasen = 3;
+                    }
                     if (OnkoPitkäMatka == true)
                     {
-                        EsteLisäVasen = 10;
+                        EsteLisäVasen = 15;
                     }
 
                     if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(-1, 0, 0))))
@@ -600,9 +656,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                     if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka + new Vector3(-2, 0, 0))))
                     {
                         EsteLisäVasen += 1;
+                        if (OnkoKeskiMatka == true)
+                        {
+                            EsteLisäVasen = 3;
+                        }
                         if (OnkoPitkäMatka == true)
                         {
-                            EsteLisäVasen = 10;
+                            EsteLisäVasen = 15;
                         }
 
 
@@ -669,9 +729,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                 if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, 1, 0))) && SaaRikkoa == false)
                 {
                     EsteLisäYlös = 1;
+                    if (OnkoKeskiMatka == true)
+                    {
+                        EsteLisäYlös = 3;
+                    }
                     if (OnkoPitkäMatka == true)
                     {
-                        EsteLisäYlös = 10;
+                        EsteLisäYlös = 15;
 
                     }
 
@@ -682,9 +746,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                     if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, 2, 0))))
                     {
                         EsteLisäYlös += 1;
+                        if (OnkoKeskiMatka == true)
+                        {
+                            EsteLisäYlös = 3;
+                        }
                         if (OnkoPitkäMatka == true)
                         {
-                            EsteLisäYlös = 10;
+                            EsteLisäYlös = 15;
                         }
 
                         if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, 3, 0))))
@@ -732,9 +800,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                 if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -1, 0))) && SaaRikkoa == false)
                 {
                     EsteLisäAlas = 1;
+                    if (OnkoKeskiMatka == true)
+                    {
+                        EsteLisäAlas = 3;
+                    }
                     if (OnkoPitkäMatka == true)
                     {
-                        EsteLisäAlas = 10;
+                        EsteLisäAlas = 15;
                     }
 
                     if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, -1, 0))))
@@ -744,9 +816,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                     if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -2, 0))))
                     {
                         EsteLisäAlas += 1;
+                        if (OnkoKeskiMatka == true)
+                        {
+                            EsteLisäAlas = 3;
+                        }
                         if (OnkoPitkäMatka == true)
                         {
-                            EsteLisäAlas = 10;
+                            EsteLisäAlas = 15;
                         }
 
                         if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -3, 0))))
@@ -794,9 +870,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                 if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(1, 0, 0))) && SaaRikkoa == false)
                 {
                     EsteLisäOikea = 1;
+                    if (OnkoKeskiMatka == true)
+                    {
+                        EsteLisäOikea = 3;
+                    }
                     if (OnkoPitkäMatka == true)
                     {
-                        EsteLisäOikea = 10;
+                        EsteLisäOikea = 15;
                     }
 
                     if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(1, 0, 0))))
@@ -806,9 +886,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                     if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(2, 0, 0))))
                     {
                         EsteLisäOikea += 1;
+                        if (OnkoKeskiMatka == true)
+                        {
+                            EsteLisäOikea = 3;
+                        }
                         if (OnkoPitkäMatka == true)
                         {
-                            EsteLisäOikea = 10;
+                            EsteLisäOikea = 15;
                         }
 
 
@@ -857,9 +941,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                 if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(-1, 0, 0))) && SaaRikkoa == false)
                 {
                     EsteLisäVasen = 1;
+                    if (OnkoKeskiMatka == true)
+                    {
+                        EsteLisäVasen = 3;
+                    }
                     if (OnkoPitkäMatka == true)
                     {
-                        EsteLisäVasen = 10;
+                        EsteLisäVasen = 15;
                     }
 
                     if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(-1, 0, 0))))
@@ -869,9 +957,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                     if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka + new Vector3(-2, 0, 0))))
                     {
                         EsteLisäVasen += 1;
+                        if (OnkoKeskiMatka == true)
+                        {
+                            EsteLisäVasen = 3;
+                        }
                         if (OnkoPitkäMatka == true)
                         {
-                            EsteLisäVasen = 10;
+                            EsteLisäVasen = 15;
                         }
 
 
@@ -936,9 +1028,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                 if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, 1, 0))) && SaaRikkoa == false)
                 {
                     EsteLisäYlös = 1;
+                    if (OnkoKeskiMatka == true)
+                    {
+                        EsteLisäYlös = 3;
+                    }
                     if (OnkoPitkäMatka == true)
                     {
-                        EsteLisäYlös = 10;
+                        EsteLisäYlös = 15;
                     }
 
                     if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, 1, 0))))
@@ -948,9 +1044,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                     if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, 2, 0))))
                     {
                         EsteLisäYlös += 1;
+                        if (OnkoKeskiMatka == true)
+                        {
+                            EsteLisäYlös = 3;
+                        }
                         if (OnkoPitkäMatka == true)
                         {
-                            EsteLisäYlös = 10;
+                            EsteLisäYlös = 15;
                         }
 
                         if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, 3, 0))))
@@ -998,9 +1098,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                 if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -1, 0))) && SaaRikkoa == false)
                 {
                     EsteLisäAlas = 1;
+                    if (OnkoKeskiMatka == true)
+                    {
+                        EsteLisäAlas = 3;
+                    }
                     if (OnkoPitkäMatka == true)
                     {
-                        EsteLisäAlas = 10;
+                        EsteLisäAlas = 15;
                     }
 
                     if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(0, -1, 0))))
@@ -1010,9 +1114,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                     if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -2, 0))))
                     {
                         EsteLisäAlas += 1;
+                        if (OnkoKeskiMatka == true)
+                        {
+                            EsteLisäAlas = 3;
+                        }
                         if (OnkoPitkäMatka == true)
                         {
-                            EsteLisäAlas = 10;
+                            EsteLisäAlas = 15;
                         }
 
                         if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(0, -3, 0))))
@@ -1060,9 +1168,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                 if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(1, 0, 0))) && SaaRikkoa == false)
                 {
                     EsteLisäOikea = 1;
+                    if (OnkoKeskiMatka == true)
+                    {
+                        EsteLisäOikea = 3;
+                    }
                     if (OnkoPitkäMatka == true)
                     {
-                        EsteLisäOikea = 10;
+                        EsteLisäOikea = 15;
                     }
 
                     if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(1, 0, 0))))
@@ -1072,9 +1184,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                     if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(2, 0, 0))))
                     {
                         EsteLisäOikea += 1;
+                        if (OnkoKeskiMatka == true)
+                        {
+                            EsteLisäOikea = 3;
+                        }
                         if (OnkoPitkäMatka == true)
                         {
-                            EsteLisäOikea = 10;
+                            EsteLisäOikea = 15;
                         }
 
 
@@ -1123,9 +1239,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                 if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(paikka + new Vector3(-1, 0, 0))) && SaaRikkoa == false)
                 {
                     EsteLisäVasen = 1;
+                    if (OnkoKeskiMatka == true)
+                    {
+                        EsteLisäVasen = 3;
+                    }
                     if (OnkoPitkäMatka == true)
                     {
-                        EsteLisäVasen = 10;
+                        EsteLisäVasen = 15;
                     }
 
                     if (Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(paikka + new Vector3(-1, 0, 0))))
@@ -1135,9 +1255,13 @@ public class VihuLiikkuminen : MonoBehaviour {
                     if (TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(uusipaikka + new Vector3(-2, 0, 0))))
                     {
                         EsteLisäVasen += 1;
+                        if (OnkoKeskiMatka == true)
+                        {
+                            EsteLisäVasen = 3;
+                        }
                         if (OnkoPitkäMatka == true)
                         {
-                            EsteLisäVasen = 10;
+                            EsteLisäVasen = 15;
                         }
 
 

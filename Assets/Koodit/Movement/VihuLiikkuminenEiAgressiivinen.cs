@@ -277,6 +277,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.right;
                     uusipaikka = suunta + paikka;
+                    transform.right = uusipaikka - transform.position;
                     transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
@@ -343,6 +344,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.left;
                     uusipaikka = suunta + paikka;
+                    transform.right = uusipaikka - transform.position;
                     transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
@@ -557,6 +559,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.right;
                     uusipaikka = suunta + paikka;
+                    transform.right = uusipaikka - transform.position;
                     transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
@@ -623,6 +626,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.left;
                     uusipaikka = suunta + paikka;
+                    transform.right = uusipaikka - transform.position;
                     transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
@@ -840,6 +844,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.right;
                     uusipaikka = suunta + paikka;
+                    transform.right = uusipaikka - transform.position;
                     transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
@@ -906,6 +911,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.left;
                     uusipaikka = suunta + paikka;
+                    transform.right = uusipaikka - transform.position;
                     transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
@@ -1120,6 +1126,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.right;
                     uusipaikka = suunta + paikka;
+                    transform.right = uusipaikka - transform.position;
                     transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
@@ -1186,6 +1193,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.left;
                     uusipaikka = suunta + paikka;
+                    transform.right = uusipaikka - transform.position;
                     transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
