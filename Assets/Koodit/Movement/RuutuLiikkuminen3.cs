@@ -99,25 +99,25 @@ public class RuutuLiikkuminen3 : MonoBehaviour
                 
                 AikaaKulunut = 0f;
 
-                if (Hitsaus == true && Input.GetKey(KeyCode.LeftArrow))
+                if (Hitsaus == true && Input.GetKey(KeyCode.LeftArrow) && Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(pos + new Vector3(-1, 0, 0)) )==false)
                 {
                     TuhoutuminenAlempiLayer.Instance.rikkitilemap.SetTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(pos + new Vector3(-1, 0, 0)), RikkiTiili);
                     Tuhoutuminen.Instance.tilemap.SetTile(Tuhoutuminen.Instance.tilemap.WorldToCell(pos + new Vector3(-1, 0, 0)), Tiili);
                     HitsausHealth -= 1;
                 }
-                if (Hitsaus == true && Input.GetKey(KeyCode.RightArrow))
+                if (Hitsaus == true && Input.GetKey(KeyCode.RightArrow) && Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(pos + new Vector3(1, 0, 0))) == false)
                 {
                     TuhoutuminenAlempiLayer.Instance.rikkitilemap.SetTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(pos + new Vector3(1, 0, 0)), RikkiTiili);
                     Tuhoutuminen.Instance.tilemap.SetTile(Tuhoutuminen.Instance.tilemap.WorldToCell(pos + new Vector3(1, 0, 0)), Tiili);
                     HitsausHealth -= 1;
                 }
-                if (Hitsaus == true && Input.GetKey(KeyCode.UpArrow))
+                if (Hitsaus == true && Input.GetKey(KeyCode.UpArrow) && Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(pos + new Vector3(0, 1, 0))) == false)
                 {
                     TuhoutuminenAlempiLayer.Instance.rikkitilemap.SetTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(pos + new Vector3(0, 1, 0)), RikkiTiili);
                     Tuhoutuminen.Instance.tilemap.SetTile(Tuhoutuminen.Instance.tilemap.WorldToCell(pos + new Vector3(0, 1, 0)), Tiili);
                     HitsausHealth -= 1;
                 }
-                if (Hitsaus == true && Input.GetKey(KeyCode.DownArrow))
+                if (Hitsaus == true && Input.GetKey(KeyCode.DownArrow) && Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(pos + new Vector3(0, -1, 0))) == false)
                 {
                     TuhoutuminenAlempiLayer.Instance.rikkitilemap.SetTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(pos + new Vector3(0, -1, 0)), RikkiTiili);
                     Tuhoutuminen.Instance.tilemap.SetTile(Tuhoutuminen.Instance.tilemap.WorldToCell(pos + new Vector3(0, -1, 0)), Tiili);

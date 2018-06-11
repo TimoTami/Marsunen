@@ -18,7 +18,7 @@ public class Healthit : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        HealthTeksti.text = "Health " + RuutuLiikkuminen3.Instance.PelaajanHealth +"\r\n" + "Kypärä " + RuutuLiikkuminen3.Instance.KypäränHealth +"\r\n" + "Sauva " + RuutuLiikkuminen3.Instance.HitsausHealth;
+        HealthTeksti.text = "Health: " + RuutuLiikkuminen3.Instance.PelaajanHealth/2 +"\r\n" + "Rakettibensa: "+ RuutuLiikkuminen3.Instance.RakettiBensa + "\r\n" + "Kypärä: " + RuutuLiikkuminen3.Instance.KypäränHealth/2 +"\r\n" + "Sauva: " + RuutuLiikkuminen3.Instance.HitsausHealth;
         //KypäräHealthTeksti.text = "Kypärä " + RuutuLiikkuminen3.Instance.KypäränHealth;
         //HitsausHealthTeksti.text = "Sauva " + RuutuLiikkuminen3.Instance.HitsausHealth;
     }

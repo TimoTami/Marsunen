@@ -30,7 +30,7 @@ public class Tuhoutuminen : MonoBehaviour
         OnTuhoutunut = true;
             if (PelaajaGameObject != null)
             {
-                this.tilemap = GameObject.Find("IlmastointiTilemap").GetComponent<Tilemap>();
+                tilemap = GameObject.Find("IlmastointiTilemap").GetComponent<Tilemap>();
                 
 
             }

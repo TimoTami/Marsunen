@@ -15,7 +15,7 @@ public class MarsuVartaassa : MonoBehaviour {
     }
     //IEnumerator Odota()
     //{
-    //    yield return new WaitForSecondsRealtime(4);
+    //    yield return new WaitForSecondsRealtime(12);
     //    SceneManager.LoadScene("HamsteriScene");
 
     //}
@@ -23,7 +23,7 @@ public class MarsuVartaassa : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        if(Input.anyKey)
+        if (Input.GetKey(KeyCode.Return))
 
         SceneManager.LoadScene("HamsteriScene");
     }

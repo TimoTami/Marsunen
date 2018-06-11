@@ -34,7 +34,7 @@ public class TuhoutuminenAlempiLayer : MonoBehaviour
             {
                 
                 rikkitilemap = GameObject.Find("IlmastointiRikkiTilemap").GetComponent<Tilemap>();
-                tiilihealth = 2;
+                
 
             }
         }

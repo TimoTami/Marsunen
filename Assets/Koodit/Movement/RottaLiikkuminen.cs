@@ -61,7 +61,7 @@ public class RottaLiikkuminen : MonoBehaviour {
         if (otherCollider.tag == "Player")
         {
 
-            SceneManager.LoadScene("HamsteriScene");
+            SceneManager.LoadScene("MarsuJaRottaVartaassaScene");
 
 
 

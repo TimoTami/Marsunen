@@ -7,8 +7,13 @@ public class SpriteVaihto : MonoBehaviour
 {
     public Sprite MarsuSavu;
     public Sprite MarsuSavuKypärä;
+    public Sprite MarsuSavuSauva;
+    public Sprite MarsuSavuKypäräSauva;
     public Sprite MarsuLiekki;
     public Sprite MarsuLiekkiKypärä;
+    public Sprite MarsuLiekkiSauva;
+    public Sprite MarsuLiekkiKypäräSauva;
+
     private SpriteRenderer spriteRenderer;
 
     public void Start()
@@ -31,12 +36,29 @@ public class SpriteVaihto : MonoBehaviour
             spriteRenderer.sprite = MarsuSavuKypärä;
             if (RuutuLiikkuminen3.Instance.transform.position != RuutuLiikkuminen3.Instance.pos)
             {
-                spriteRenderer.sprite = MarsuLiekkiKypärä;
+                
+                if (RuutuLiikkuminen3.Instance.Hitsaus == true)
+                {
+                    spriteRenderer.sprite = MarsuLiekkiKypäräSauva;
+                }
+                else
+                {
+                    spriteRenderer.sprite = MarsuLiekkiKypärä;
+                }
             }
             if (RuutuLiikkuminen3.Instance.transform.position == RuutuLiikkuminen3.Instance.pos)
             {
-                spriteRenderer.sprite = MarsuSavuKypärä;
+
+                if (RuutuLiikkuminen3.Instance.Hitsaus == true)
+                {
+                    spriteRenderer.sprite = MarsuSavuKypäräSauva;
+                }
+                else
+                {
+                    spriteRenderer.sprite = MarsuSavuKypärä;
+                }
             }
+            
 
         }
         if (RuutuLiikkuminen3.Instance.Kypärä == false)
@@ -44,12 +66,27 @@ public class SpriteVaihto : MonoBehaviour
             spriteRenderer.sprite = MarsuSavu;
             if (RuutuLiikkuminen3.Instance.transform.position != RuutuLiikkuminen3.Instance.pos)
             {
-                spriteRenderer.sprite = MarsuLiekki;
+                if (RuutuLiikkuminen3.Instance.Hitsaus == true)
+                {
+                    spriteRenderer.sprite = MarsuLiekkiSauva;
+                }
+                else
+                {
+                    spriteRenderer.sprite = MarsuLiekki;
+                }
             }
             if (RuutuLiikkuminen3.Instance.transform.position == RuutuLiikkuminen3.Instance.pos)
             {
-                spriteRenderer.sprite = MarsuSavu;
+                if (RuutuLiikkuminen3.Instance.Hitsaus == true)
+                {
+                    spriteRenderer.sprite = MarsuSavuSauva;
+                }
+                else
+                {
+                    spriteRenderer.sprite = MarsuSavu;
+                }
             }
+            
         }
     }
    
