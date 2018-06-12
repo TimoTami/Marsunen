@@ -18,7 +18,7 @@ public class KypäräTokaTaso : MonoBehaviour {
         {
             Destroy(gameObject);
             LiikkuminenYksin.Instance.Kypärä = true;
-            LiikkuminenYksin.Instance.KypäränHealth += 20;
+            LiikkuminenYksin.Instance.KypäränHealth += 10;
         }
     }
 }

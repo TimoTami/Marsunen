@@ -87,6 +87,7 @@ public class VihuLiikkuminen : MonoBehaviour {
         if ((Mathf.Abs(target.x - transform.position.x) >= 10) || ((Mathf.Abs(target.y - transform.position.y) >= 10)))
         {
             OnkoPitkäMatka = true;
+            OnkoKeskiMatka = false;
         }
 
 
@@ -111,7 +112,7 @@ public class VihuLiikkuminen : MonoBehaviour {
             else if (Uudestaan == true)
             {
                 uusipaikka = suunta + paikka;
-                transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                 paikka = uusipaikka;
                 transform.position = paikka;
                 vihuliikkunut = true;
@@ -128,7 +129,7 @@ public class VihuLiikkuminen : MonoBehaviour {
             else if (Uudestaan2 == true)
             {
                 uusipaikka = suunta + paikka;
-                transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                 paikka = uusipaikka;
                 transform.position = paikka;
                 vihuliikkunut = true;
@@ -157,7 +158,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     EsteLisäYlös = 4;
                     if (OnkoKeskiMatka == true)
                     {
-                        EsteLisäYlös = 3;
+                        EsteLisäYlös = 10;
                     }
                     if (OnkoPitkäMatka==true)
                     {
@@ -173,7 +174,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                         EsteLisäYlös += 1;
                         if (OnkoKeskiMatka == true)
                         {
-                            EsteLisäYlös = 3;
+                            EsteLisäYlös = 10;
                         }
                         if (OnkoPitkäMatka == true)
                         {
@@ -203,7 +204,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.up;
                     uusipaikka = suunta + paikka;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "ylös";
@@ -227,7 +228,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     EsteLisäAlas = 4;
                     if (OnkoKeskiMatka == true)
                     {
-                        EsteLisäAlas = 3;
+                        EsteLisäAlas = 10;
                     }
                     if (OnkoPitkäMatka == true)
                     {
@@ -243,7 +244,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                         EsteLisäAlas += 1;
                         if (OnkoKeskiMatka == true)
                         {
-                            EsteLisäAlas = 3;
+                            EsteLisäAlas = 10;
                         }
                         if (OnkoPitkäMatka == true)
                         {
@@ -273,7 +274,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.down;
                     uusipaikka = suunta + paikka;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "alas";
@@ -297,7 +298,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     EsteLisäOikea = 4;
                     if (OnkoKeskiMatka == true)
                     {
-                        EsteLisäOikea = 3;
+                        EsteLisäOikea = 10;
                     }
                     if (OnkoPitkäMatka == true)
                     {
@@ -313,7 +314,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                         EsteLisäOikea += 1;
                         if (OnkoKeskiMatka == true)
                         {
-                            EsteLisäOikea = 3;
+                            EsteLisäOikea = 10;
                         }
                         if (OnkoPitkäMatka == true)
                         {
@@ -345,7 +346,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     suunta = Vector3.right;
                     uusipaikka = suunta + paikka;
                     transform.right = uusipaikka - transform.position;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "oikea";
@@ -368,7 +369,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     EsteLisäVasen = 4;
                     if (OnkoKeskiMatka == true)
                     {
-                        EsteLisäVasen = 3;
+                        EsteLisäVasen = 10;
                     }
                     if (OnkoPitkäMatka == true)
                     {
@@ -384,7 +385,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                         EsteLisäVasen += 1;
                         if (OnkoKeskiMatka == true)
                         {
-                            EsteLisäVasen = 3;
+                            EsteLisäVasen = 10;
                         }
                         if (OnkoPitkäMatka == true)
                         {
@@ -416,7 +417,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     suunta = Vector3.left;
                     uusipaikka = suunta + paikka;
                     transform.right = uusipaikka - transform.position;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "vasen";
@@ -455,7 +456,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     EsteLisäYlös = 4;
                     if (OnkoKeskiMatka == true)
                     {
-                        EsteLisäYlös = 3;
+                        EsteLisäYlös = 10;
                     }
                     if (OnkoPitkäMatka == true)
                     {
@@ -471,7 +472,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                         EsteLisäYlös += 1;
                         if (OnkoKeskiMatka == true)
                         {
-                            EsteLisäYlös = 3;
+                            EsteLisäYlös = 10;
                         }
                         if (OnkoPitkäMatka == true)
                         {
@@ -501,7 +502,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.up;
                     uusipaikka = suunta + paikka;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "ylös";
@@ -525,7 +526,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     EsteLisäAlas = 4;
                     if (OnkoKeskiMatka == true)
                     {
-                        EsteLisäAlas = 3;
+                        EsteLisäAlas = 10;
                     }
                     if (OnkoPitkäMatka == true)
                     {
@@ -541,7 +542,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                         EsteLisäAlas += 1;
                         if (OnkoKeskiMatka == true)
                         {
-                            EsteLisäAlas = 3;
+                            EsteLisäAlas = 10;
                         }
                         if (OnkoPitkäMatka == true)
                         {
@@ -571,7 +572,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.down;
                     uusipaikka = suunta + paikka;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "alas";
@@ -595,7 +596,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     EsteLisäOikea = 4;
                     if (OnkoKeskiMatka == true)
                     {
-                        EsteLisäOikea = 3;
+                        EsteLisäOikea = 10;
                     }
                     if (OnkoPitkäMatka == true)
                     {
@@ -611,7 +612,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                         EsteLisäOikea += 1;
                         if (OnkoKeskiMatka == true)
                         {
-                            EsteLisäOikea = 3;
+                            EsteLisäOikea = 10;
                         }
                         if (OnkoPitkäMatka == true)
                         {
@@ -643,7 +644,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     suunta = Vector3.right;
                     uusipaikka = suunta + paikka;
                     transform.right = uusipaikka - transform.position;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "oikea";
@@ -666,7 +667,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     EsteLisäVasen = 4;
                     if (OnkoKeskiMatka == true)
                     {
-                        EsteLisäVasen = 3;
+                        EsteLisäVasen = 10;
                     }
                     if (OnkoPitkäMatka == true)
                     {
@@ -682,7 +683,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                         EsteLisäVasen += 1;
                         if (OnkoKeskiMatka == true)
                         {
-                            EsteLisäVasen = 3;
+                            EsteLisäVasen = 10;
                         }
                         if (OnkoPitkäMatka == true)
                         {
@@ -714,7 +715,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     suunta = Vector3.left;
                     uusipaikka = suunta + paikka;
                     transform.right = uusipaikka - transform.position;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "vasen";
@@ -755,7 +756,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     EsteLisäYlös = 4;
                     if (OnkoKeskiMatka == true)
                     {
-                        EsteLisäYlös = 3;
+                        EsteLisäYlös = 10;
                     }
                     if (OnkoPitkäMatka == true)
                     {
@@ -772,7 +773,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                         EsteLisäYlös += 1;
                         if (OnkoKeskiMatka == true)
                         {
-                            EsteLisäYlös = 3;
+                            EsteLisäYlös = 10;
                         }
                         if (OnkoPitkäMatka == true)
                         {
@@ -802,7 +803,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.up;
                     uusipaikka = suunta + paikka;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "ylös";
@@ -826,7 +827,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     EsteLisäAlas = 4;
                     if (OnkoKeskiMatka == true)
                     {
-                        EsteLisäAlas = 3;
+                        EsteLisäAlas = 10;
                     }
                     if (OnkoPitkäMatka == true)
                     {
@@ -842,7 +843,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                         EsteLisäAlas += 1;
                         if (OnkoKeskiMatka == true)
                         {
-                            EsteLisäAlas = 3;
+                            EsteLisäAlas = 10;
                         }
                         if (OnkoPitkäMatka == true)
                         {
@@ -872,7 +873,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.down;
                     uusipaikka = suunta + paikka;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "alas";
@@ -896,7 +897,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     EsteLisäOikea = 4;
                     if (OnkoKeskiMatka == true)
                     {
-                        EsteLisäOikea = 3;
+                        EsteLisäOikea = 10;
                     }
                     if (OnkoPitkäMatka == true)
                     {
@@ -912,7 +913,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                         EsteLisäOikea += 1;
                         if (OnkoKeskiMatka == true)
                         {
-                            EsteLisäOikea = 3;
+                            EsteLisäOikea = 10;
                         }
                         if (OnkoPitkäMatka == true)
                         {
@@ -944,7 +945,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     suunta = Vector3.right;
                     uusipaikka = suunta + paikka;
                     transform.right = uusipaikka - transform.position;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "oikea";
@@ -967,7 +968,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     EsteLisäVasen = 4;
                     if (OnkoKeskiMatka == true)
                     {
-                        EsteLisäVasen = 3;
+                        EsteLisäVasen = 10;
                     }
                     if (OnkoPitkäMatka == true)
                     {
@@ -983,7 +984,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                         EsteLisäVasen += 1;
                         if (OnkoKeskiMatka == true)
                         {
-                            EsteLisäVasen = 3;
+                            EsteLisäVasen = 10;
                         }
                         if (OnkoPitkäMatka == true)
                         {
@@ -1015,7 +1016,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     suunta = Vector3.left;
                     uusipaikka = suunta + paikka;
                     transform.right = uusipaikka - transform.position;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "vasen";
@@ -1054,7 +1055,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     EsteLisäYlös = 4;
                     if (OnkoKeskiMatka == true)
                     {
-                        EsteLisäYlös = 3;
+                        EsteLisäYlös = 10;
                     }
                     if (OnkoPitkäMatka == true)
                     {
@@ -1070,7 +1071,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                         EsteLisäYlös += 1;
                         if (OnkoKeskiMatka == true)
                         {
-                            EsteLisäYlös = 3;
+                            EsteLisäYlös = 10;
                         }
                         if (OnkoPitkäMatka == true)
                         {
@@ -1100,7 +1101,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.up;
                     uusipaikka = suunta + paikka;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "ylös";
@@ -1124,7 +1125,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     EsteLisäAlas = 4;
                     if (OnkoKeskiMatka == true)
                     {
-                        EsteLisäAlas = 3;
+                        EsteLisäAlas = 10;
                     }
                     if (OnkoPitkäMatka == true)
                     {
@@ -1140,7 +1141,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                         EsteLisäAlas += 1;
                         if (OnkoKeskiMatka == true)
                         {
-                            EsteLisäAlas = 3;
+                            EsteLisäAlas = 10;
                         }
                         if (OnkoPitkäMatka == true)
                         {
@@ -1170,7 +1171,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.down;
                     uusipaikka = suunta + paikka;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "alas";
@@ -1194,7 +1195,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     EsteLisäOikea = 4;
                     if (OnkoKeskiMatka == true)
                     {
-                        EsteLisäOikea = 3;
+                        EsteLisäOikea = 10;
                     }
                     if (OnkoPitkäMatka == true)
                     {
@@ -1210,7 +1211,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                         EsteLisäOikea += 1;
                         if (OnkoKeskiMatka == true)
                         {
-                            EsteLisäOikea = 3;
+                            EsteLisäOikea = 10;
                         }
                         if (OnkoPitkäMatka == true)
                         {
@@ -1242,7 +1243,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     suunta = Vector3.right;
                     uusipaikka = suunta + paikka;
                     transform.right = uusipaikka - transform.position;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "oikea";
@@ -1265,7 +1266,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     EsteLisäVasen = 4;
                     if (OnkoKeskiMatka == true)
                     {
-                        EsteLisäVasen = 3;
+                        EsteLisäVasen = 10;
                     }
                     if (OnkoPitkäMatka == true)
                     {
@@ -1281,7 +1282,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                         EsteLisäVasen += 1;
                         if (OnkoKeskiMatka == true)
                         {
-                            EsteLisäVasen = 3;
+                            EsteLisäVasen = 10;
                         }
                         if (OnkoPitkäMatka == true)
                         {
@@ -1313,7 +1314,7 @@ public class VihuLiikkuminen : MonoBehaviour {
                     suunta = Vector3.left;
                     uusipaikka = suunta + paikka;
                     transform.right = uusipaikka - transform.position;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "vasen";

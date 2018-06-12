@@ -126,7 +126,7 @@ public class TuhoutuminenTokaTaso : MonoBehaviour {
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (tilemap.HasTile(tilemap.WorldToCell(PelaajaAiempiHitInt)) == false && TuhoutuminenAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(PelaajaAiempiHitInt)) == true)
+        if (tilemap.HasTile(tilemap.WorldToCell(PelaajaAiempiHitInt)) == false && TuhoutuminenTokaTasoAlempiLayer.Instance.rikkitilemap.HasTile(TuhoutuminenTokaTasoAlempiLayer.Instance.rikkitilemap.WorldToCell(PelaajaAiempiHitInt)) == true)
         {
 
             OnTuhoutunut = true;

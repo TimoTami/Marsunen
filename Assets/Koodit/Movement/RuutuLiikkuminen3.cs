@@ -24,6 +24,10 @@ public class RuutuLiikkuminen3 : MonoBehaviour
 
     public float Viive = 1f;
     private float AikaaKulunut = 0f;
+    public AudioSource[] sounds;
+    public AudioSource RakettiÄäni;
+    public AudioSource SauvaÄäni;
+
 
     public static RuutuLiikkuminen3 Instance;
 
@@ -35,17 +39,22 @@ public class RuutuLiikkuminen3 : MonoBehaviour
 
     void Awake()
     {
-        //SceneManager.LoadScene("HamsteriScene");
+        
         Instance = this;
     }
 
         public void Start()
     {
+        sounds = GetComponents<AudioSource>();
+        RakettiÄäni = sounds[0];
+        SauvaÄäni = sounds[1];
+
+
 
         RakettiBensa = 200;
         PelaajanHealth = 20;
         liikkunut = false;
-        pos = transform.position;          // Take the initial position
+        pos = transform.position;          
  
         File.WriteAllText(viimepositiox, pos.x.ToString());
         File.WriteAllText(viimepositioy, pos.y.ToString());
@@ -59,7 +68,7 @@ public class RuutuLiikkuminen3 : MonoBehaviour
         if (PelaajanHealth <= 0||RakettiBensa<=0)
         {
             SceneManager.LoadScene("HamsteriScene");
-            //Application.LoadLevel(Application.loadedLevel);
+            
         }
         //if (Kypärä == true)
         //{
@@ -103,24 +112,28 @@ public class RuutuLiikkuminen3 : MonoBehaviour
                 {
                     TuhoutuminenAlempiLayer.Instance.rikkitilemap.SetTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(pos + new Vector3(-1, 0, 0)), RikkiTiili);
                     Tuhoutuminen.Instance.tilemap.SetTile(Tuhoutuminen.Instance.tilemap.WorldToCell(pos + new Vector3(-1, 0, 0)), Tiili);
+                    SauvaÄäni.Play();
                     HitsausHealth -= 1;
                 }
                 if (Hitsaus == true && Input.GetKey(KeyCode.RightArrow) && Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(pos + new Vector3(1, 0, 0))) == false)
                 {
                     TuhoutuminenAlempiLayer.Instance.rikkitilemap.SetTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(pos + new Vector3(1, 0, 0)), RikkiTiili);
                     Tuhoutuminen.Instance.tilemap.SetTile(Tuhoutuminen.Instance.tilemap.WorldToCell(pos + new Vector3(1, 0, 0)), Tiili);
+                    SauvaÄäni.Play();
                     HitsausHealth -= 1;
                 }
                 if (Hitsaus == true && Input.GetKey(KeyCode.UpArrow) && Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(pos + new Vector3(0, 1, 0))) == false)
                 {
                     TuhoutuminenAlempiLayer.Instance.rikkitilemap.SetTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(pos + new Vector3(0, 1, 0)), RikkiTiili);
                     Tuhoutuminen.Instance.tilemap.SetTile(Tuhoutuminen.Instance.tilemap.WorldToCell(pos + new Vector3(0, 1, 0)), Tiili);
+                    SauvaÄäni.Play();
                     HitsausHealth -= 1;
                 }
                 if (Hitsaus == true && Input.GetKey(KeyCode.DownArrow) && Tuhoutuminen.Instance.tilemap.HasTile(Tuhoutuminen.Instance.tilemap.WorldToCell(pos + new Vector3(0, -1, 0))) == false)
                 {
                     TuhoutuminenAlempiLayer.Instance.rikkitilemap.SetTile(TuhoutuminenAlempiLayer.Instance.rikkitilemap.WorldToCell(pos + new Vector3(0, -1, 0)), RikkiTiili);
                     Tuhoutuminen.Instance.tilemap.SetTile(Tuhoutuminen.Instance.tilemap.WorldToCell(pos + new Vector3(0, -1, 0)), Tiili);
+                    SauvaÄäni.Play();
                     HitsausHealth -= 1;
                 }
             }
@@ -129,7 +142,7 @@ public class RuutuLiikkuminen3 : MonoBehaviour
             l = "ei saa liikkua";
             if (Input.GetKey(KeyCode.A) && transform.position == pos)
             {        // Left
-
+                RakettiÄäni.Play();
                 File.WriteAllText(viimepositiox, pos.x.ToString());
                 File.WriteAllText(viimepositioy, pos.y.ToString());
                 File.WriteAllText(viimepositioz, pos.z.ToString());
@@ -143,6 +156,7 @@ public class RuutuLiikkuminen3 : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.D) && transform.position == pos)
             {        // Right
+                RakettiÄäni.Play();
                 File.WriteAllText(viimepositiox, pos.x.ToString());
                 File.WriteAllText(viimepositioy, pos.y.ToString());
                 File.WriteAllText(viimepositioz, pos.z.ToString());
@@ -156,6 +170,7 @@ public class RuutuLiikkuminen3 : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.W) && transform.position == pos)
             {        // Up
+                RakettiÄäni.Play();
                 File.WriteAllText(viimepositiox, pos.x.ToString());
                 File.WriteAllText(viimepositioy, pos.y.ToString());
                 File.WriteAllText(viimepositioz, pos.z.ToString());
@@ -169,6 +184,7 @@ public class RuutuLiikkuminen3 : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.S) && transform.position == pos)
             {        // Down
+                RakettiÄäni.Play();
                 File.WriteAllText(viimepositiox, pos.x.ToString());
                 File.WriteAllText(viimepositioy, pos.y.ToString());
                 File.WriteAllText(viimepositioz, pos.z.ToString());
@@ -184,13 +200,17 @@ public class RuutuLiikkuminen3 : MonoBehaviour
        
 
             transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * speed);
+
+
+        if (transform.position != pos)
+        {
             
-
-
+        }
         if (transform.position==pos)
         {
             File.WriteAllText(nykyinenpositio, pos.ToString());
         }
+        
 
      
 

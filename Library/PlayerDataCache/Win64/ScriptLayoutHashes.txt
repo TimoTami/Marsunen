@@ -1,11 +1,12 @@
 WindowsStandalone
 PlayerPath?
-D:/Marsunen/Marsunen/MarsuBuild/MarsuBuild.exe
+D:/Marsunen/Marsunen/MarsuPeli/MarsuPeli.exe
 SceneListBegin?
-Assets/HamsteriScene.unity
 Assets/1TasoMarsu.unity
+Assets/HamsteriScene.unity
 Assets/MarsuVartaassaScene.unity
 Assets/MarsuJaRottaVartaassaScene.unity
+Assets/LoppuScene.unity
 SceneListEnd?
 16f4a097cf3de4086e8a9e797751fdd0 Assembly-CSharp.dll:.VihuTuhoutuminen
 1fe2bc163423f64d1235963a095cab46 Assembly-CSharp.dll:.Jump
@@ -103,7 +104,6 @@ e90403eeda069970e0b9de1533de13a6 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 16da51d1b62ef6d4ee1849350434023b UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 65b1140c054f68c1d131ba694a36dc23 Assembly-CSharp.dll:UnityEngine.Tilemaps.RandomTile
 697b4aa75891de1ee11ad1ef765c92d0 Assembly-CSharp.dll:.BulletAttribute
-db355d86b42a2322689fa38ba881d6bc Assembly-CSharp.dll:.AutoObjectSpawner
 a619a8c3b1b23e696831a41db2f32a30 Assembly-CSharp.dll:UnityEngine.RuleTile
 486cd95c82d8305219c352c06b776e1f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 9e61f3535f3c55760a1cedfbd114f4af UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -118,8 +118,8 @@ c7dd12c15208b0447e101f80038706df UnityEngine.Timeline.dll:UnityEngine.Timeline.A
 0ddb2c46096a1e59e0dce07886ce4769 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 64f3a13c1277a7f1324321d93d0ec13b UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 85e51925345bea1a2e46566ef4001350 Assembly-CSharp.dll:.AutoRotation
+ccdf34ad3e98c891981b876ab5e8951e Assembly-CSharp.dll:.TuhoutuminenTokaTasoAlempiLayer
 66b3109aa5921cf800bec17926c6adba Unity.TextMeshPro.dll:TMPro.TMP_SubMeshUI
-4ca2fc6544f9919ea7f3357fcd75dfb7 Assembly-CSharp.dll:.ObjectShooter
 201273fb4f889724fb090164b7d6c657 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 486cd95c82d8305219c352c06b776e1f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 0f27c39183b9eb95eba0a228bea28273 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -135,6 +135,7 @@ da21fc3f8056b1f91c3dd09c7bf4f90a UnityEngine.Networking.dll:UnityEngine.Networki
 fc061f3ae8a876c0687e86378d4a447c UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 7ca56e063bd071986fff4f513cc4f477 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.KypäräTokaTaso
 f461efc5fa8ccc60cabc8f2e4c012be2 Assembly-CSharp.dll:.AutoMove
 3947602be8ac017ca427b6192de2facf Assembly-CSharp.dll:.ConditionRepeat
 5a2b9039e4a59e6a0f7ec4427a5fda6c Assembly-CSharp.dll:.LoadLevelAction
@@ -183,7 +184,7 @@ c31ff9acb65f7a15b5c6fd77c3314d83 Vuforia.UnityExtensions.dll:Vuforia.WireframeBe
 486cd95c82d8305219c352c06b776e1f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 6b0fb1fc30db02b2478905bb250abf39 Assembly-CSharp.dll:.ConditionArea
 762cc5c1b35e1c889059192f4b978a4b Assembly-CSharp.dll:UnityEngine.Tilemaps.AnimatedTile
-ea8f4f4d80de00c59b7a05c0040fbb22 Assembly-CSharp.dll:.VihuLiikkuminen
+59a3b6019938d12ceedb920bfe8466fd Assembly-CSharp.dll:.VihuLiikkuminen
 0993dc5cdf4a292136f7f5354988e92b Assembly-CSharp.dll:.CameraZoom
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.Kaantyminen
 182e416670915c50a548c38c642db0d8 Vuforia.UnityExtensions.dll:Vuforia.AnchorBehaviour
@@ -228,6 +229,8 @@ f16835701e71dd5d6fb1fed4b7aff1d8 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 f5ece19966a893bd3def5b7aaf85514d Assembly-CSharp.dll:UnityEngine.Tilemaps.PipelineTile
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.RuutuLiikkuminen2
 eaf0bcdb10d442a4029d615f41d09957 Unity.TextMeshPro.dll:TMPro.TextContainer
+2aa53b2d2e2cfc38b7b98001d8fae024 Assembly-CSharp.dll:.LiikkuminenYksin
+6158d6e6cb9b599e7eeacd3fdaa75af1 Assembly-CSharp.dll:.TuhoutuminenTokaTaso
 1a5de9f48268b63fedf4b96b24857b14 Assembly-CSharp.dll:.PickUpAndHold
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.HitsausKeräily
 201273fb4f889724fb090164b7d6c657 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -244,11 +247,15 @@ da21fc3f8056b1f91c3dd09c7bf4f90a UnityEngine.Networking.dll:UnityEngine.Networki
 529a95e9e8e7686c4816e08fbb37183f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 fc061f3ae8a876c0687e86378d4a447c UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 7ca56e063bd071986fff4f513cc4f477 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.KuumaTiiliTokaTaso
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.MarsuJaRottaVartaassa
 d127260b9375f90f9cbe9b0cd1b1aa61 Assembly-CSharp.dll:.ConsumeResourceAction
+28bb7f0243afa6f9db8d98ddccaa9ea6 Assembly-CSharp.dll:.ReunaTokaTaso
 72a8523b432c0a5317826b7a9e0a0e79 Unity.TextMeshPro.dll:TMPro.PackageResourceImporterWindow
 e46113951763d45502a1260c6ea4c4e8 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 0f1104b767945d30cc7514d6960d8c50 Assembly-CSharp.dll:.UIItemScript
 392c5b921098bd4c139d9146d0efa6d7 Unity.TextMeshPro.dll:TMPro.TMP_Settings
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.MarsuVartaassa
 d86387a81c4c256c1fca71581e106c22 Assembly-CSharp.dll:.Patrol
 caaf49e414675ed3a81480aa3cff6a9c Assembly-CSharp.dll:.ConditionKeyPress
 486cd95c82d8305219c352c06b776e1f UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
@@ -260,7 +267,6 @@ e033f131358cea5a0eabf9561e781deb UnityEngine.TestRunner.dll:UnityEngine.TestTool
 28a95668dd28649297d595834fe8417e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
 7621bd63c51a871db945c7f5277b2910 Assembly-CSharp.dll:.RottaLiikkuminen
 28bb7f0243afa6f9db8d98ddccaa9ea6 Assembly-CSharp.dll:.Reuna
-2b68ae3df5ce1a75799094f7d15dc228 Assembly-CSharp.dll:.TimedSelfDestruct
 1a90b221dc803408fbafa883c12bcab4 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioListenerExtension
 70f7dc248db3379548a88e8d4fa049f8 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 28a95668dd28649297d595834fe8417e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
@@ -276,7 +282,7 @@ b4a8b3ed85775d50ba42bbbaa1fca507 Assembly-CSharp.dll:UnityEngine.Tilemaps.GridIn
 98842d4d0f1e24cc024bf548f888fcb6 Assembly-CSharp.dll:.RotateWithArrows
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 8c042738ed90ace6daeecbbbcece8ee6 Assembly-CSharp.dll:.TintTextureGenerator
-05e1e3fe80212e52eebb6ca4d9d239ea Assembly-CSharp.dll:.SpriteVaihto
+279c1d6f36b5aa1386aa5d69524aca03 Assembly-CSharp.dll:.SpriteVaihto
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.CollectableAttribute
 f5ece19966a893bd3def5b7aaf85514d Assembly-CSharp.dll:UnityEngine.Tilemaps.TerrainTile
 17310178f7c669a2417468b24bea55ab Assembly-CSharp.dll:.CreateObjectAction
@@ -285,6 +291,7 @@ def4ab129bfb4f3a18d01d0e9aef2b9a Assembly-CSharp.dll:.ConditionCollision
 b09b6bebf1d7de9bbe2f9bd32ad4c9e8 Assembly-CSharp.dll:.FollowTarget
 e04611b8715e6833d2bd7010fc6be10b Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 598098dc018cc5b2a327f77173226bf0 Assembly-CSharp.dll:.DestroyAction
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.BensaaTokaTaso
 1930610992eca8e2d8f6484bb59c7424 Assembly-CSharp.dll:.DialogueSystem
 87b61a1ed977faf06f8b573a1c042d91 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 9318334b30e9f195f573b2ce00154b95 Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
@@ -325,7 +332,8 @@ c31ff9acb65f7a15b5c6fd77c3314d83 Vuforia.UnityExtensions.dll:Vuforia.WireframeBe
 486cd95c82d8305219c352c06b776e1f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 94dfee9d79966a7f768982ff7e56860d Assembly-CSharp.dll:.VihuLiikkuminenIlmanCollisionia
 e233d1c5f4779b563724f49ce957b012 Assembly-CSharp.dll:.CameraFollow
-3cb671b3bb290ded3275ab1caec478c8 Assembly-CSharp.dll:.RuutuLiikkuminen3
+e40ffb86e866ab6ab24f5ce282ed8de5 Assembly-CSharp.dll:.RuutuLiikkuminen3
+05e1e3fe80212e52eebb6ca4d9d239ea Assembly-CSharp.dll:.SpriteVaihtoTokaTaso
 4c15c13954be484c2b8aecfce29d5e7a Assembly-CSharp.dll:.DialogueBalloonAction
 01e72d6e0fdb43ea21a1cd0badb7ce75 Assembly-CSharp.dll:UnityEngine.Tilemaps.WeightedRandomTile
 da2920a7c349233d53fc45d68d5dc092 Assembly-CSharp.dll:.PushWithButton
@@ -363,4 +371,7 @@ ad24de185ef9a605870b931cda4f181e Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehav
 c31ff9acb65f7a15b5c6fd77c3314d83 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 486cd95c82d8305219c352c06b776e1f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.RuutuLiikkuminen
-486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.MarsuVartaassa
+7756eeb37b24b0013163c43098773102 Assembly-CSharp.dll:.HealthitTokaTaso
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.MaaliTokaTaso
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.PelinUudelleenAloitus
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.LopetaPeli

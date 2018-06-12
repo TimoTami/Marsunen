@@ -16,7 +16,8 @@ public class LiikkuminenYksin : MonoBehaviour {
     public string l;
     public Vector3 pos;
     public Vector3Int PosInt;
-    public float speed = 1;                      
+    public float speed = 1;
+    AudioSource RakettiÄäni;
 
     //public Tile RikkiTiili;
     //public Tile Tiili;
@@ -35,9 +36,9 @@ public class LiikkuminenYksin : MonoBehaviour {
 
     public void Start()
     {
-
+        RakettiÄäni = GetComponent<AudioSource>();
         RakettiBensa = 200;
-        PelaajanHealth = 20;
+        PelaajanHealth = 40;
         liikkunut = false;
         pos = transform.position;          // Take the initial position
 
@@ -74,7 +75,7 @@ public class LiikkuminenYksin : MonoBehaviour {
     {
         liikkunut = false;
 
-        
+
         
         if (transform.position == pos)
         {
@@ -114,7 +115,7 @@ public class LiikkuminenYksin : MonoBehaviour {
             if (Input.GetKey(KeyCode.A) && transform.position == pos)
             {        // Left
 
-                
+                RakettiÄäni.Play();
                 pos += Vector3.left;
                 PelaajaViimeliike = "vasen";
 
@@ -125,7 +126,7 @@ public class LiikkuminenYksin : MonoBehaviour {
             }
             if (Input.GetKey(KeyCode.D) && transform.position == pos)
             {        // Right
-                
+                RakettiÄäni.Play();
                 pos += Vector3.right;
                 PelaajaViimeliike = "oikea";
 
@@ -136,7 +137,7 @@ public class LiikkuminenYksin : MonoBehaviour {
             }
             if (Input.GetKey(KeyCode.W) && transform.position == pos)
             {        // Up
-                
+                RakettiÄäni.Play();
                 pos += Vector3.up;
                 PelaajaViimeliike = "ylös";
 
@@ -147,7 +148,7 @@ public class LiikkuminenYksin : MonoBehaviour {
             }
             if (Input.GetKey(KeyCode.S) && transform.position == pos)
             {        // Down
-               
+                RakettiÄäni.Play();
                 pos += Vector3.down;
                 PelaajaViimeliike = "alas";
 
@@ -161,6 +162,7 @@ public class LiikkuminenYksin : MonoBehaviour {
 
         transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * speed);
         PosInt = new Vector3Int((Mathf.RoundToInt(transform.position.x)), (Mathf.RoundToInt(transform.position.y)), 0);
+        
         
 
 

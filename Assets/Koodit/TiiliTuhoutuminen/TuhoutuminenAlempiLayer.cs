@@ -8,8 +8,6 @@ using System.IO;
 public class TuhoutuminenAlempiLayer : MonoBehaviour
 {
 
-
- 
     public GameObject PelaajaGameObject;
     public Tilemap rikkitilemap;
     public Vector3 PelaajaHitPosition1;
@@ -27,17 +25,7 @@ public class TuhoutuminenAlempiLayer : MonoBehaviour
     
     void Start()
     {
-
-        {
-           
-            if (PelaajaGameObject != null)
-            {
-                
-                rikkitilemap = GameObject.Find("IlmastointiRikkiTilemap").GetComponent<Tilemap>();
-                
-
-            }
-        }
+       rikkitilemap = GameObject.Find("IlmastointiRikkiTilemap").GetComponent<Tilemap>();
     }
 
     public void OnCollisionEnter2D(Collision2D collisionAlempi)
@@ -93,7 +81,7 @@ public class TuhoutuminenAlempiLayer : MonoBehaviour
                     RuutuLiikkuminen3.Instance.transform.position = Vector3.MoveTowards(RuutuLiikkuminen3.Instance.transform.position, RuutuLiikkuminen3.Instance.pos, Time.deltaTime * RuutuLiikkuminen3.Instance.speed);
                     //RuutuLiikkuminen3.Instance.liikkunut = true;
                     //RuutuLiikkuminen3.Instance.RakettiBensa -=1;
-                    tiilihealth -= 1;
+                    
                     rikkitilemap.SetTile(rikkitilemap.WorldToCell(PelaajaHitPosition1Int), null);
                 if (RuutuLiikkuminen3.Instance.Kypärä == true)
                 {

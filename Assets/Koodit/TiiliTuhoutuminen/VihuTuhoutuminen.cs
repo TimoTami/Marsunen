@@ -98,9 +98,9 @@ public class VihuTuhoutuminen : MonoBehaviour
                         VihuLiikkuminen.Instance.uusipaikka += new Vector3(-0.5f, 0f, 0f);
                     }
 
-                    
 
-                    VihuLiikkuminen.Instance.transform.position = Vector3.MoveTowards(VihuLiikkuminen.Instance.transform.position, VihuLiikkuminen.Instance.uusipaikka, Time.deltaTime * VihuLiikkuminen.Instance.vihuspeed);
+
+                    //VihuLiikkuminen.Instance.transform.position = Vector3.MoveTowards(VihuLiikkuminen.Instance.transform.position, VihuLiikkuminen.Instance.uusipaikka, Time.deltaTime * VihuLiikkuminen.Instance.vihuspeed);
                     VihuLiikkuminen.Instance.paikka = VihuLiikkuminen.Instance.uusipaikka;
                     VihuLiikkuminen.Instance.transform.position = VihuLiikkuminen.Instance.paikka;
                     VihuLiikkuminen.Instance.Uudestaan = true;
@@ -165,7 +165,7 @@ public class VihuTuhoutuminen : MonoBehaviour
 
 
 
-                    VihuLiikkuminenEiAgressiivinen.Instance.transform.position = Vector3.MoveTowards(VihuLiikkuminenEiAgressiivinen.Instance.transform.position, VihuLiikkuminenEiAgressiivinen.Instance.uusipaikka, Time.deltaTime * VihuLiikkuminenEiAgressiivinen.Instance.vihuspeed);
+                    //VihuLiikkuminenEiAgressiivinen.Instance.transform.position = Vector3.MoveTowards(VihuLiikkuminenEiAgressiivinen.Instance.transform.position, VihuLiikkuminenEiAgressiivinen.Instance.uusipaikka, Time.deltaTime * VihuLiikkuminenEiAgressiivinen.Instance.vihuspeed);
                     VihuLiikkuminenEiAgressiivinen.Instance.paikka = VihuLiikkuminenEiAgressiivinen.Instance.uusipaikka;
                     VihuLiikkuminenEiAgressiivinen.Instance.transform.position = VihuLiikkuminenEiAgressiivinen.Instance.paikka;
                     VihuLiikkuminenEiAgressiivinen.Instance.vihuliikkunut = true;

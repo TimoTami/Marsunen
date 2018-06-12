@@ -22,17 +22,7 @@ public class TuhoutuminenTokaTasoAlempiLayer : MonoBehaviour {
 
     void Start()
     {
-
-        {
-
-            if (PelaajaGameObject != null)
-            {
-
-                rikkitilemap = GameObject.Find("IlmastointiRikkiTilemapTokaTaso").GetComponent<Tilemap>();
-
-
-            }
-        }
+       rikkitilemap = GameObject.Find("IlmastointiRikkiTilemapTokaTaso").GetComponent<Tilemap>();
     }
 
     public void OnCollisionEnter2D(Collision2D collisionAlempi)
@@ -88,7 +78,7 @@ public class TuhoutuminenTokaTasoAlempiLayer : MonoBehaviour {
                     LiikkuminenYksin.Instance.transform.position = Vector3.MoveTowards(LiikkuminenYksin.Instance.transform.position, LiikkuminenYksin.Instance.pos, Time.deltaTime * LiikkuminenYksin.Instance.speed);
                     //RuutuLiikkuminen3.Instance.liikkunut = true;
                     //RuutuLiikkuminen3.Instance.RakettiBensa -=1;
-                    tiilihealth -= 1;
+                    
                     rikkitilemap.SetTile(rikkitilemap.WorldToCell(PelaajaHitPosition1Int), null);
                     if (LiikkuminenYksin.Instance.Kypärä == true)
                     {

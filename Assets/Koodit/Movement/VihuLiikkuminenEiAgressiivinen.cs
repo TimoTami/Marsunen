@@ -160,7 +160,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.up;
                     uusipaikka = suunta + paikka;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "ylös";
@@ -234,7 +234,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.down;
                     uusipaikka = suunta + paikka;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "alas";
@@ -310,7 +310,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     suunta = Vector3.right;
                     uusipaikka = suunta + paikka;
                     transform.right = uusipaikka - transform.position;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "oikea";
@@ -385,7 +385,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     suunta = Vector3.left;
                     uusipaikka = suunta + paikka;
                     transform.right = uusipaikka - transform.position;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "vasen";
@@ -474,7 +474,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.up;
                     uusipaikka = suunta + paikka;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "ylös";
@@ -548,7 +548,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.down;
                     uusipaikka = suunta + paikka;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "alas";
@@ -624,7 +624,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     suunta = Vector3.right;
                     uusipaikka = suunta + paikka;
                     transform.right = uusipaikka - transform.position;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "oikea";
@@ -699,7 +699,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     suunta = Vector3.left;
                     uusipaikka = suunta + paikka;
                     transform.right = uusipaikka - transform.position;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "vasen";
@@ -791,7 +791,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.up;
                     uusipaikka = suunta + paikka;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "ylös";
@@ -865,7 +865,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.down;
                     uusipaikka = suunta + paikka;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "alas";
@@ -941,7 +941,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     suunta = Vector3.right;
                     uusipaikka = suunta + paikka;
                     transform.right = uusipaikka - transform.position;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "oikea";
@@ -1016,7 +1016,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     suunta = Vector3.left;
                     uusipaikka = suunta + paikka;
                     transform.right = uusipaikka - transform.position;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "vasen";
@@ -1105,7 +1105,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.up;
                     uusipaikka = suunta + paikka;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "ylös";
@@ -1179,7 +1179,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     //transform.position = paikka + suunta ;
                     suunta = Vector3.down;
                     uusipaikka = suunta + paikka;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "alas";
@@ -1255,7 +1255,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     suunta = Vector3.right;
                     uusipaikka = suunta + paikka;
                     transform.right = uusipaikka - transform.position;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "oikea";
@@ -1330,7 +1330,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     suunta = Vector3.left;
                     uusipaikka = suunta + paikka;
                     transform.right = uusipaikka - transform.position;
-                    transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
+                    //transform.position = Vector3.MoveTowards(paikka, uusipaikka, Time.deltaTime * vihuspeed);
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "vasen";
@@ -1355,18 +1355,8 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
         // is the other object a player?
         if (otherCollider.tag == "Player")
         {
+            SceneManager.LoadScene("MarsuVartaassaScene");
 
-            SceneManager.LoadScene("HamsteriScene");
-
-
-            //if (userInterface != null)
-            //{
-            //    // add one point
-            //    int playerId = (playerTag == "Player") ? 0 : 1;
-            //    userInterface.AddOnePoint(playerId);
-            //}
-
-            // then destroy this object
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

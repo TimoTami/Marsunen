@@ -19,7 +19,7 @@ public class Maali : MonoBehaviour {
     {
         if (collision.tag=="Player")
         {
-            SceneManager.LoadScene("1TasoMarsu");
+            SceneManager.LoadScene("LoppuScene");
         }
     }
 }
