@@ -29,13 +29,13 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
     public int EsteLisäVasenTulos;
 
 
-    string targetpositio = @"C:\Tiedontallennusharjoitus\Targetpositiotiedosto.txt";
-    string xsuunta = @"C:\Tiedontallennusharjoitus\Xsuuntatiedosto.txt";
-    string ysuunta = @"C:\Tiedontallennusharjoitus\Ysuuntatiedosto.txt";
-    string testausylös = @"C:\Tiedontallennusharjoitus\Testaustiedostoylös.txt";
-    string testausalas = @"C:\Tiedontallennusharjoitus\Testaustiedostoalas.txt";
-    string testausoikea = @"C:\Tiedontallennusharjoitus\Testaustiedostooikea.txt";
-    string testausvasen = @"C:\Tiedontallennusharjoitus\Testaustiedostovasen.txt";
+    //string targetpositio = @"C:\Tiedontallennusharjoitus\Targetpositiotiedosto.txt";
+    //string xsuunta = @"C:\Tiedontallennusharjoitus\Xsuuntatiedosto.txt";
+    //string ysuunta = @"C:\Tiedontallennusharjoitus\Ysuuntatiedosto.txt";
+    //string testausylös = @"C:\Tiedontallennusharjoitus\Testaustiedostoylös.txt";
+    //string testausalas = @"C:\Tiedontallennusharjoitus\Testaustiedostoalas.txt";
+    //string testausoikea = @"C:\Tiedontallennusharjoitus\Testaustiedostooikea.txt";
+    //string testausvasen = @"C:\Tiedontallennusharjoitus\Testaustiedostovasen.txt";
     public bool OnkoKeskiMatka;
     public bool OnkoPitkäMatka;
 
@@ -81,7 +81,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
         target = RuutuLiikkuminen3.Instance.transform.position;
 
 
-        File.WriteAllText(targetpositio, target.ToString());
+        //File.WriteAllText(targetpositio, target.ToString());
 
         
         if (RuutuLiikkuminen3.Instance.liikkunut == true && transform.position == uusipaikka)
@@ -164,7 +164,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "ylös";
-                    File.WriteAllText(testausylös, ("tapahtuiylös"));
+                    //File.WriteAllText(testausylös, ("tapahtuiylös"));
                     vihuliikkunut = true;
                     EsteLisäYlös = 0;
                     EsteLisäAlas = 0;
@@ -238,7 +238,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "alas";
-                    File.WriteAllText(testausalas, ("tapahtuialas"));
+                    //File.WriteAllText(testausalas, ("tapahtuialas"));
                     vihuliikkunut = true;
                     EsteLisäYlös = 0;
                     EsteLisäAlas = 0;
@@ -314,7 +314,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "oikea";
-                    File.WriteAllText(testausoikea, ("tapahtuioikea"));
+                    //File.WriteAllText(testausoikea, ("tapahtuioikea"));
                     vihuliikkunut = true;
                     EsteLisäYlös = 0;
                     EsteLisäAlas = 0;
@@ -389,7 +389,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "vasen";
-                    File.WriteAllText(testausvasen, ("tapahtuivasen"));
+                    //File.WriteAllText(testausvasen, ("tapahtuivasen"));
                     vihuliikkunut = true;
                     EsteLisäYlös = 0;
                     EsteLisäAlas = 0;
@@ -478,7 +478,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "ylös";
-                    File.WriteAllText(testausylös, ("tapahtuiylös"));
+                    //File.WriteAllText(testausylös, ("tapahtuiylös"));
                     vihuliikkunut = true;
                     EsteLisäYlös = 0;
                     EsteLisäAlas = 0;
@@ -552,7 +552,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "alas";
-                    File.WriteAllText(testausalas, ("tapahtuialas"));
+                    //File.WriteAllText(testausalas, ("tapahtuialas"));
                     vihuliikkunut = true;
                     EsteLisäYlös = 0;
                     EsteLisäAlas = 0;
@@ -628,7 +628,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "oikea";
-                    File.WriteAllText(testausoikea, ("tapahtuioikea"));
+                    //File.WriteAllText(testausoikea, ("tapahtuioikea"));
                     vihuliikkunut = true;
                     EsteLisäYlös = 0;
                     EsteLisäAlas = 0;
@@ -703,7 +703,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "vasen";
-                    File.WriteAllText(testausvasen, ("tapahtuivasen"));
+                    //File.WriteAllText(testausvasen, ("tapahtuivasen"));
                     vihuliikkunut = true;
                     EsteLisäYlös = 0;
                     EsteLisäAlas = 0;
@@ -795,7 +795,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "ylös";
-                    File.WriteAllText(testausylös, ("tapahtuiylös"));
+                    //File.WriteAllText(testausylös, ("tapahtuiylös"));
                     vihuliikkunut = true;
                     EsteLisäYlös = 0;
                     EsteLisäAlas = 0;
@@ -869,7 +869,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "alas";
-                    File.WriteAllText(testausalas, ("tapahtuialas"));
+                    //File.WriteAllText(testausalas, ("tapahtuialas"));
                     vihuliikkunut = true;
                     EsteLisäYlös = 0;
                     EsteLisäAlas = 0;
@@ -945,7 +945,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "oikea";
-                    File.WriteAllText(testausoikea, ("tapahtuioikea"));
+                    //File.WriteAllText(testausoikea, ("tapahtuioikea"));
                     vihuliikkunut = true;
                     EsteLisäYlös = 0;
                     EsteLisäAlas = 0;
@@ -1020,7 +1020,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "vasen";
-                    File.WriteAllText(testausvasen, ("tapahtuivasen"));
+                    //File.WriteAllText(testausvasen, ("tapahtuivasen"));
                     vihuliikkunut = true;
                     EsteLisäYlös = 0;
                     EsteLisäAlas = 0;
@@ -1109,7 +1109,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "ylös";
-                    File.WriteAllText(testausylös, ("tapahtuiylös"));
+                    //File.WriteAllText(testausylös, ("tapahtuiylös"));
                     vihuliikkunut = true;
                     EsteLisäYlös = 0;
                     EsteLisäAlas = 0;
@@ -1183,7 +1183,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "alas";
-                    File.WriteAllText(testausalas, ("tapahtuialas"));
+                    //File.WriteAllText(testausalas, ("tapahtuialas"));
                     vihuliikkunut = true;
                     EsteLisäYlös = 0;
                     EsteLisäAlas = 0;
@@ -1259,7 +1259,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "oikea";
-                    File.WriteAllText(testausoikea, ("tapahtuioikea"));
+                    //File.WriteAllText(testausoikea, ("tapahtuioikea"));
                     vihuliikkunut = true;
                     EsteLisäYlös = 0;
                     EsteLisäAlas = 0;
@@ -1334,7 +1334,7 @@ public class VihuLiikkuminenEiAgressiivinen : MonoBehaviour
                     paikka = uusipaikka;
                     transform.position = paikka;
                     VihuViimeliike = "vasen";
-                    File.WriteAllText(testausvasen, ("tapahtuivasen"));
+                    //File.WriteAllText(testausvasen, ("tapahtuivasen"));
                     vihuliikkunut = true;
                     EsteLisäYlös = 0;
                     EsteLisäAlas = 0;
